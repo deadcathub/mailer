@@ -1,24 +1,24 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Container from "@material-ui/core/Container";
+import { Header } from "./component/Header";
+import { Main } from "./page/Main";
+import { About } from "./page/About";
 
-// import { LoginCnt } from "./layout/logincnt/LoginCnt";
 // import { AuthProvider, AuthConsumer } from "./context/Auth";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="container pt-4">
-        <h1>Заголовок</h1>
-        <p>
-          Не забывайте, что консультация экстрасенса онлайн может подарить ключ к пониманию
-          самых сложных ситуаций. Попробуйте прямо сейчас! Просто выберите эксперта и нажмите
-          кнопку «Позвонить» рядом с его фотографией.
-        </p>
-      </div>
+      <Header />
+      <Container maxWidth="lg">
+        <Switch>
+          <Route path={"/"} exact component={Main} />
+          <Route path={"/about"} component={About} />
+        </Switch>
+      </Container>
     </BrowserRouter>
   );
 };
 
 export default App;
-
-
