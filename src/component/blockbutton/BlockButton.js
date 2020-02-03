@@ -19,7 +19,7 @@ export const BlockButton = props => {
   }
 
   return (
-    <div style={{textAlign: 'center'}}>
+    <div style={{textAlign: 'center', marginTop: '30px'}}>
       <a href={props.apptree.button.link} style={styleButton} target="_blank" rel="noopener noreferrer">
         {props.apptree.button.text}
       </a>

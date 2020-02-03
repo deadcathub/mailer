@@ -10,7 +10,7 @@ export const BlockCta = props => {
     color: '#222222',
     textAlign: 'center',
     padding: '0',
-    margin: '0 auto 30px'
+    margin: '0 auto'
   }
 
   return (

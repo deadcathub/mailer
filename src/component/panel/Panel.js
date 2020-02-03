@@ -34,19 +34,15 @@ export const Panel = props => {
     <div className="test">
 
       <FormControl variant="filled" className={classes.formControl}>
-        <InputLabel id="demo-simple-select-filled-label">Age</InputLabel>
+        <InputLabel id="demo-simple-select-filled-label">Тип рассылки</InputLabel>
         <Select
           labelId="demo-simple-select-filled-label"
           id="demo-simple-select-filled"
           value={age}
           onChange={handleChange}
         >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          <MenuItem value={1}>Разовая</MenuItem>
+          <MenuItem value={2}>Периодическая</MenuItem>
         </Select>
       </FormControl>
 
@@ -54,9 +50,8 @@ export const Panel = props => {
       <br />
 
       <TextField
-        label="Size"
+        label="Слоган акции"
         id="outlined-size-normal"
-        defaultValue="Normal"
         variant="filled"
       />
 
@@ -65,8 +60,7 @@ export const Panel = props => {
 
       <TextField
         id="filled-textarea"
-        label="Multiline Placeholder"
-        placeholder="Placeholder"
+        label="Скрытый текст"
         multiline
         variant="filled"
       />
