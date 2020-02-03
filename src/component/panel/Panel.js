@@ -1,6 +1,6 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import Select from "@material-ui/core/Select";
@@ -10,39 +10,28 @@ import Fab from "@material-ui/core/Fab";
 import Tooltip from "@material-ui/core/Tooltip";
 import TextField from "@material-ui/core/TextField";
 
-export const Main = () => {
+export const Panel = props => {
+
   const useStyles = makeStyles(theme => ({
     formControl: {
-      minWidth: 120
-    },
-    selectEmpty: {
-      marginTop: theme.spacing(2)
+      minWidth: 200
     }
   }));
-
   const classes = useStyles();
-  const [age, setAge] = React.useState("");
 
-  const inputLabel = React.useRef(null);
-  const [labelWidth, setLabelWidth] = React.useState(0);
-  React.useEffect(() => {
-    // setLabelWidth(inputLabel.current.offsetWidth);
+  const [age, setAge] = useState("");
+  // const inputLabel = React.useRef(null);
+
+  useEffect(() => {
+    // console.log(age);
   }, []);
 
-  const handleChange = event => {
-    setAge(event.target.value);
+  const handleChange = e => {
+    setAge(e.target.value);
   };
 
   return (
     <div className="test">
-      <Typography variant="h3" component="h2">
-        Главная
-      </Typography>
-      <Typography variant="body1" gutterBottom>
-        Не забывайте, что консультация экстрасенса онлайн может подарить ключ
-        к пониманию самых сложных ситуаций. Просто выберите эксперта и нажмите
-        кнопку «Позвонить» рядом с его фотографией.
-      </Typography>
 
       <FormControl variant="filled" className={classes.formControl}>
         <InputLabel id="demo-simple-select-filled-label">Age</InputLabel>
@@ -91,7 +80,8 @@ export const Main = () => {
         </Fab>
       </Tooltip>
 
-
     </div>
   );
 };
+
+
