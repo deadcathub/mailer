@@ -3,6 +3,7 @@ import Container from "@material-ui/core/Container";
 import { Panel } from "./component/panel/Panel";
 import { MailWrap } from "./layout/mailwrap/MailWrap";
 import { MailTree } from "./layout/mailtree/MailTree";
+import defaultBanner from './component/default-banner.png';
 
 // import { BrowserRouter, Route, Switch } from "react-router-dom";
 // import { AuthProvider, AuthConsumer } from "./context/Auth";
@@ -16,18 +17,18 @@ class App extends Component {
       },
       banner: {
         link: `https://astro7.ru/experts/all/`,
-        url: `https://user98023.clients-cdnnow.ru/images/newsletter/mail/2019/temporary/mail/fortune-wheel.jpg`
+        url: defaultBanner
       },
       paragraph: [
         {
-          text: `Летнее солнцестояние приходится на самый длинный день и самую короткую в году, когда высота
-                подъёма Солнца на небосклоне является самой высокой. Поскольку летнее солнцестояние длится только
-                краткий момент времени, этого дня, когда происходит летнее солнцестояние, используют другие названия.`
+          text: `Вы можете вращать Колесо Фортуны и выигрывать подарки каждые субботу
+                и воскресенье. А сегодня мы добавляем до 12 мин. к консультациям, заказанным через
+                Центр поддержки клиентов, чтобы вы смогли получить все нужные ответы.`
         },
         {
-          text: `Солнцестояние приходится на самый длинный день и самую короткую в году, когда высота
-                подъёма Солнца на небосклоне является самой высокой. Поскольку летнее солнцестояние длится только
-                краткий момент времени, этого дня, когда происходит летнее солнцестояние, используют другие названия.`
+          text: `Вы можете вращать Колесо Фортуны и выигрывать подарки каждые субботу
+                и воскресенье. А сегодня мы добавляем до 12 мин. к консультациям, заказанным через
+                Центр поддержки клиентов, чтобы вы смогли получить все нужные ответы.`
         }
       ],
       cta: {
@@ -35,7 +36,7 @@ class App extends Component {
       },
       button: {
         link: `https://astro7.ru/experts/all/`,
-        text: `Пополнить счет`
+        text: `Вращать колесо`
       }
     }
   };

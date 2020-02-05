@@ -16,9 +16,11 @@ export const MailTree = props => {
         } else if (nodeType === "banner") {
           return <BlockBanner key={index} apptree={propsTree} index={index} />;
         } else if (nodeType === "paragraph") {
-          return propsTree.paragraph.map((item, index) => {
-            return <BlockParagraph key={index} itemText={item.text} index={index} />
-          });
+          return (
+            propsTree.paragraph.map((paragraphItem, index) => {
+              return <BlockParagraph key={index} itemText={paragraphItem.text} index={index} />
+            })
+          )
         } else if (nodeType === "cta") {
           return <BlockCta key={index} apptree={propsTree} />;
         } else if (nodeType === "button") {

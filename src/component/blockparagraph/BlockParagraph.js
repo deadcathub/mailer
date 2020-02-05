@@ -14,7 +14,9 @@ export const BlockParagraph = props => {
 
   return (
     <p style={styleParagraph}>
-      {props.itemText} {props.index}
+      {props.index} {props.itemText}
     </p>
   );
 };
+
+
