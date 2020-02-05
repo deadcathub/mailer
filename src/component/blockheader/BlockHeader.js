@@ -32,33 +32,31 @@ export const BlockHeader = props => {
     <div>
       <table cellSpacing="0" cellPadding="0" border="0" width="100%">
         <tbody>
-        <tr>
-          <td valign="middle" align="left" style={{padding: '18px 20px 18px 0'}}>
-            <table align="left" border="0" cellPadding="0" cellSpacing="0">
-              <tbody>
-              <tr>
-                <td align="left" valign="middle">
-                  <a href={propsTree.header.link} style={{textDecoration: 'none'}} target="_blank" rel="noopener noreferrer">
-                    <img src="https://user98023.clients-cdnnow.ru/images/newsletter/mail/2016/permanent/adaptive/action/action-logo-a7.png" style={styleLogo} width="320" height="88" alt="Astro7.ru" />
-                  </a>
-                </td>
-              </tr>
-              </tbody>
-            </table>
-          </td>
-          <td valign="middle" align="left" style={{padding: '25px 0 18px'}}>
-            <table align="right" cellPadding="0" cellSpacing="0" border="0" style={{borderCollapse: 'collapse'}}>
-              <tbody>
-              <tr>
-                <td height="47" align="left" valign="middle" style={{lineHeight: '1.1'}}>
-                  <a href="88001000781" style={styleHotline} target="_blank" rel="noopener noreferrer">+7 800 100-07-81</a><br />
-                  <span style={styleLabel}>звоните круглосуточно</span>
-                </td>
-              </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
+          <tr>
+            <td valign="middle" align="left" style={{padding: '18px 0 18px'}}>
+              <table align="left" border="0" cellPadding="0" cellSpacing="0">
+                <tbody>
+                  <tr>
+                    <td align="left" valign="middle">
+                      <a href={propsTree.header.link} style={{textDecoration: 'none'}} target="_blank" rel="noopener noreferrer">
+                        <img src="https://user98023.clients-cdnnow.ru/images/newsletter/mail/2016/permanent/adaptive/action/action-logo-a7.png" style={styleLogo} width="320" height="88" alt="Astro7.ru" />
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table align="right" cellPadding="0" cellSpacing="0" border="0" style={{borderCollapse: 'collapse'}}>
+                <tbody>
+                  <tr>
+                    <td height="47" align="left" valign="middle" style={{lineHeight: '1.1'}}>
+                      <a href="88001000781" style={styleHotline} target="_blank" rel="noopener noreferrer">+7 800 100-07-81</a><br />
+                      <span style={styleLabel}>звоните круглосуточно</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>

@@ -14,7 +14,7 @@ export const BlockBanner = props => {
   }
 
   return (
-    <a href={propsTree.banner.link} style={{display: 'block'}} target="_blank" rel="noopener noreferrer">
+    <a className="js-block" href={propsTree.banner.link} style={{display: 'block'}} target="_blank" rel="noopener noreferrer">
       <img
         src={propsTree.banner.url}
         style={styleBanner}

@@ -12,11 +12,20 @@ export const BlockParagraph = props => {
     marginBottom: "15px"
   };
 
+  const paragraphTextBlocks = props.apptree.paragraph.text.split(/\n/);
+
   return (
-    <p style={styleParagraph}>
-      {props.index} {props.itemText}
-    </p>
-  );
-};
+    <div className="js-block">
+      {paragraphTextBlocks.map((paragraphText, index) => {
+        return (
+          <p style={styleParagraph} key="index">
+            {paragraphText}
+          </p>
+        )
+      })}
+    </div>
+  )
+
+}
 
 

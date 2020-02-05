@@ -6,6 +6,10 @@ body {
   font-size: $fontsize;
   color: $color;
 }
+.js-block:hover {
+  outline: 5px solid rgba(63, 81, 181, .3);
+  cursor: pointer;
+}
 
 
 
