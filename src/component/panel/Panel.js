@@ -9,6 +9,7 @@ import AddIcon from "@material-ui/icons/Add";
 import Fab from "@material-ui/core/Fab";
 import Tooltip from "@material-ui/core/Tooltip";
 import TextField from "@material-ui/core/TextField";
+import './Panel.scss'
 
 export const Panel = props => {
 
@@ -31,50 +32,45 @@ export const Panel = props => {
   };
 
   return (
-    <div className="test">
-
-      <FormControl variant="filled" className={classes.formControl}>
-        <InputLabel id="demo-simple-select-filled-label">Тип рассылки</InputLabel>
-        <Select
-          labelId="demo-simple-select-filled-label"
-          id="demo-simple-select-filled"
-          value={age}
-          onChange={handleChange}
-        >
-          <MenuItem value={1}>Разовая</MenuItem>
-          <MenuItem value={2}>Периодическая</MenuItem>
-        </Select>
-      </FormControl>
-
-      <br />
-      <br />
-
-      <TextField
-        label="Слоган акции"
-        id="outlined-size-normal"
-        variant="filled"
-      />
-
-      <br />
-      <br />
-
-      <TextField
-        id="filled-textarea"
-        label="Скрытый текст"
-        multiline
-        variant="filled"
-      />
-
-      <br />
-      <br />
-
+    <>
+      <ul className="panel">
+        <li className="panel_item">
+          <FormControl variant="filled" className={classes.formControl}>
+            <InputLabel id="demo-simple-select-filled-label">Тип рассылки</InputLabel>
+            <Select
+              labelId="demo-simple-select-filled-label"
+              id="demo-simple-select-filled"
+              value={age}
+              onChange={handleChange}
+            >
+              <MenuItem value={1}>Разовая</MenuItem>
+              <MenuItem value={2}>Периодическая</MenuItem>
+            </Select>
+          </FormControl>
+        </li>
+        <li className="panel_item">
+          <TextField
+            label="Слоган акции"
+            id="outlined-size-normal"
+            variant="filled"
+          />
+        </li>
+        <li className="panel_item">
+          <TextField
+            id="filled-textarea"
+            label="Скрытый текст"
+            multiline
+            variant="filled"
+          />
+        </li>
+      </ul>
       <Tooltip title="Add" aria-label="add">
         <Fab color="primary" className={classes.fab}>
           <AddIcon />
         </Fab>
       </Tooltip>
+    </>
 
-    </div>
   );
 };
 

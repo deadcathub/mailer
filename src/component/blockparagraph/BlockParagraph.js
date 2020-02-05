@@ -1,11 +1,6 @@
 import React from "react";
 
 export const BlockParagraph = props => {
-
-  const styleParagraphWrap = {
-    marginTop: '30px 0 30px'
-  }
-
   const styleParagraph = {
     fontFamily: "Roboto, Arial, sans-serif",
     fontSize: "17px",
@@ -18,13 +13,8 @@ export const BlockParagraph = props => {
   };
 
   return (
-    <div style={styleParagraphWrap}>
-      <p style={styleParagraph}>
-        {props.apptree.paragraph.text} {props.index}
-      </p>
-    </div>
-  )
-
-}
-
-
+    <p style={styleParagraph}>
+      {props.itemText} {props.index}
+    </p>
+  );
+};
