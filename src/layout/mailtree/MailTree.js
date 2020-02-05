@@ -14,7 +14,7 @@ export const MailTree = props => {
         if (nodeType === "header") {
           return <BlockHeader key={index} apptree={propsTree} index={index} />
         } else if (nodeType === "banner") {
-          return <BlockBanner key={index} apptree={propsTree} index={index} />
+          return <BlockBanner key={index} apptree={propsTree} toggleDrawer={props.toggleDrawer} index={index} />
         } else if (nodeType === "paragraph") {
           return <BlockParagraph key={index} apptree={propsTree} index={index} />
         } else if (nodeType === "outro") {
