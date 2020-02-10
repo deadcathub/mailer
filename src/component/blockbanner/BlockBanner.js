@@ -14,7 +14,7 @@ export const BlockBanner = props => {
   }
 
   return (
-    <a className="js-block" onClick={props.toggleDrawer('bottom', true)} style={{display: 'block'}} target="_blank" rel="noopener noreferrer">
+    <a className="js-block" href={propsTree.banner.link} onClick={props.toggleDrawer('bottom', true)} style={{display: 'block'}} target="_blank" rel="noopener noreferrer">
       <img
         src={propsTree.banner.url}
         style={styleBanner}

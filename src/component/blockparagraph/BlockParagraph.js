@@ -15,17 +15,14 @@ export const BlockParagraph = props => {
   const paragraphTextBlocks = props.apptree.paragraph.text.split(/\n/);
 
   return (
-    <div className="js-block">
+    <div className="js-block" onClick={props.toggleDrawer("bottom", true)}>
       {paragraphTextBlocks.map((paragraphText, index) => {
         return (
           <p style={styleParagraph} key="index">
             {paragraphText}
           </p>
-        )
+        );
       })}
     </div>
-  )
-
-}
-
-
+  );
+};

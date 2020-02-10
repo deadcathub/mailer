@@ -14,7 +14,7 @@ export const BlockCta = props => {
   }
 
   return (
-    <div style={{marginTop: 30, marginBottom: 30}}>
+    <div className="js-block" style={{marginTop: 30, marginBottom: 30}} onClick={props.toggleDrawer('bottom', true)}>
       <p align="center" valign="top" style={styleCta}>
         {props.apptree.cta.text}
       </p>

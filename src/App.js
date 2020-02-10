@@ -5,8 +5,8 @@ import { MailWrap } from "./layout/mailwrap/MailWrap";
 import { MailTree } from "./layout/mailtree/MailTree";
 import defaultBanner from './component/default-banner.png';
 
-import Drawer from '@material-ui/core/Drawer';
 
+import Drawer from '@material-ui/core/Drawer';
 
 class App extends Component {
 
@@ -27,12 +27,14 @@ class App extends Component {
         url: defaultBanner
       },
       paragraph: {
-          text: `Вы можете вращать Колесо Фортуны и выигрывать подарки каждые субботу и воскресенье. А сегодня мы добавляем до 12 мин. к консультациям, заказанным через Центр поддержки клиентов.`
+        text: `Вы можете вращать Колесо Фортуны и выигрывать подарки каждые субботу и воскресенье. А сегодня мы добавляем до 12 мин. к консультациям, заказанным через Центр поддержки клиентов.`
       },
-      outro: {
-        ctaText: `Вращайте Колесо Фортуны и выигрывайте ценные призы`,
-        btnLink: `https://astro7.ru/experts/all/`,
-        btnText: `Вращать колесо`
+      cta: {
+        text: `Вращайте Колесо Фортуны и выигрывайте ценные призы`
+      },
+      btn: {
+        link: `https://astro7.ru/experts/all/`,
+        text: `Вращать колесо`
       }
     }
   };
@@ -42,6 +44,7 @@ class App extends Component {
       return;
     }
     this.setState({ ...this.state, [side]: open });
+    event.preventDefault()
   };
 
   render() {
