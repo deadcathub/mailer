@@ -22,7 +22,7 @@ export const BlockBtn = props => {
       className="js-block"
       block-id={props.index}
       onClick={(e) => {
-        props.setEditBlockType("btn");
+        props.setBlockType("btn");
         props.toggleDrawer("bottom", true)(e);
       }}
       style={{ textAlign: "center", marginTop: "30px" }}

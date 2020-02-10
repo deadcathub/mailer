@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Container from "@material-ui/core/Container";
-import Button from '@material-ui/core/Button';
+import Button from "@material-ui/core/Button";
 import { MailWrap } from "./layout/mailwrap/MailWrap";
 import { BlockTree } from "./layout/blocktree/BlockTree";
 import { Panel } from "./component/panel/Panel";
@@ -8,7 +8,7 @@ import { DrawerCnt } from "./component/drawercnt/DrawerCnt";
 
 import Drawer from "@material-ui/core/Drawer";
 
-class App extends Component {
+export class App extends Component {
   state = {
     blockTree: {
       header: {
@@ -29,22 +29,24 @@ class App extends Component {
         text: `Вращать колесо`
       }
     },
-    editBlockType: "banner"
+    blockType: null
   };
 
-  setEditBlockType = blockType => {
+  setBlockType = blockType => {
     this.setState({
-      editBlockType: blockType
+      blockType: blockType
     });
   };
-
-  // componentDidMount() {
-  //   this.setEditBlockType();
-  // }
 
   toggleDrawer = (side, open) => e => {
     this.setState({ [side]: open });
     e.preventDefault();
+  };
+
+  deleteBlock = () => {
+    const localState = this.state.blockTree;
+    delete localState[this.state.blockType];
+    this.setState({ blockTree: localState, blockType: null, bottom: false });
   };
 
   render() {
@@ -56,7 +58,7 @@ class App extends Component {
             <BlockTree
               blockTree={this.state.blockTree}
               toggleDrawer={this.toggleDrawer}
-              setEditBlockType={this.setEditBlockType}
+              setBlockType={this.setBlockType}
             />
           </MailWrap>
         </Container>
@@ -66,23 +68,24 @@ class App extends Component {
           open={this.state.bottom}
           onClose={this.toggleDrawer("bottom", false)}
         >
-          <Container
-            maxWidth="md"
-            style={{ paddingTop: "50px", paddingBottom: "50px" }}
-          >
+          <Container maxWidth="md" style={{ paddingTop: "50px" }}>
             <DrawerCnt
               anchor={"bottom"}
               blockTree={this.state.blockTree}
-              editblocktype={this.state.editBlockType}
+              editblocktype={this.state.blockType}
             />
           </Container>
           <Container
             className="b-modal_panel"
             maxWidth="md"
-            style={{ paddingTop: "50px", paddingBottom: "50px" }}
+            style={{ paddingTop: "20px", paddingBottom: "50px" }}
           >
-            <Button color="secondary">Удалить блок</Button>
-            <Button variant="contained" color="primary">Сохранить</Button>
+            <Button onClick={this.deleteBlock} size="large">
+              Удалить
+            </Button>
+            <Button size="large" color="primary" variant="contained">
+              Сохранить
+            </Button>
           </Container>
         </Drawer>
       </>
@@ -90,4 +93,4 @@ class App extends Component {
   }
 }
 
-export default App;
+

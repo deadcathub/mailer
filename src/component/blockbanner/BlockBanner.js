@@ -18,7 +18,7 @@ export const BlockBanner = props => {
       block-id={props.index}
       href={propsTree.banner.link}
       onClick={(e) => {
-        props.setEditBlockType("banner");
+        props.setBlockType("banner");
         props.toggleDrawer("bottom", true)(e);
       }}
       style={{ display: "block" }}

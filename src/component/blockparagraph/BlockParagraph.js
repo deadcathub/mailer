@@ -19,7 +19,7 @@ export const BlockParagraph = props => {
       className="js-block"
       block-id={props.index}
       onClick={(e) => {
-        props.setEditBlockType("paragraph");
+        props.setBlockType("paragraph");
         props.toggleDrawer("bottom", true)(e);
       }}
     >

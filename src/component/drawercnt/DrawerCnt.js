@@ -24,6 +24,7 @@ export const DrawerCnt = props => {
         id="filled-textarea"
         label="Текст"
         multiline
+        rows="10"
         variant="filled"
         value={props.blockTree.paragraph.text}
       />
