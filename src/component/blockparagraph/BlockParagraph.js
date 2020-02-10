@@ -18,10 +18,9 @@ export const BlockParagraph = props => {
     <div
       className="js-block"
       block-id={props.index}
-      onClick={() => {
+      onClick={(e) => {
         props.setEditBlockType("paragraph");
-        props.toggleDrawer("bottom", true);
-        console.log('click');
+        props.toggleDrawer("bottom", true)(e);
       }}
     >
       {paragraphTextBlocks.map((paragraphText, index) => {
