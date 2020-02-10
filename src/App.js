@@ -1,24 +1,16 @@
 import React, { Component } from "react";
 import Container from "@material-ui/core/Container";
-import { Panel } from "./component/panel/Panel";
 import { MailWrap } from "./layout/mailwrap/MailWrap";
-import { MailTree } from "./layout/mailtree/MailTree";
-import defaultBanner from './component/default-banner.png';
+import { BlockTree } from "./layout/blocktree/BlockTree";
+import { Panel } from "./component/panel/Panel";
+import { DrawerCnt } from "./component/drawercnt/DrawerCnt";
+import defaultBanner from "./component/default-banner.png";
 
-
-import Drawer from '@material-ui/core/Drawer';
+import Drawer from "@material-ui/core/Drawer";
 
 class App extends Component {
-
   state = {
-    top: false,
-    left: false,
-    bottom: false,
-    right: false
-  }
-
-  appState = {
-    mailTree: {
+    blockTree: {
       header: {
         link: `https://astro7.ru/`
       },
@@ -36,15 +28,24 @@ class App extends Component {
         link: `https://astro7.ru/experts/all/`,
         text: `Вращать колесо`
       }
-    }
+    },
+    editBlockType: "banner"
   };
 
-  toggleDrawer = (side, open) => event => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-      return;
-    }
-    this.setState({ ...this.state, [side]: open });
-    event.preventDefault()
+  setEditBlockType = blockType => {
+    this.setState({
+      editBlockType: blockType
+    });
+  };
+
+  // componentDidMount() {
+  //   this.setEditBlockType();
+  // }
+
+  toggleDrawer = (side, open) => e => {
+    console.log('inside');
+    this.setState({ [side]: open });
+    e.preventDefault();
   };
 
   render() {
@@ -53,21 +54,26 @@ class App extends Component {
         <Container maxWidth="lg">
           <Panel />
           <MailWrap>
-            <MailTree apptree={this.appState.mailTree} toggleDrawer={this.toggleDrawer} />
+            <BlockTree
+              blockTree={this.state.blockTree}
+              toggleDrawer={this.toggleDrawer}
+              setEditBlockType={this.setEditBlockType}
+            />
           </MailWrap>
         </Container>
-
-        <Drawer anchor="bottom" open={this.state.bottom} onClose={this.toggleDrawer('bottom', false)}>
-          <Container maxWidth="lg">
-            <br /><br /><br /><br /><br />123 <br /><br /><br /><br /><br />
-          </Container>
+        <Drawer
+          anchor="bottom"
+          open={this.state.bottom}
+          onClose={this.toggleDrawer("bottom", false)}
+        >
+          <DrawerCnt
+            anchor={"bottom"}
+            editblocktype={this.state.editBlockType}
+          />
         </Drawer>
-
       </>
     );
   }
-};
+}
 
-export default App
-
-
+export default App;

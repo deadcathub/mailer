@@ -18,14 +18,22 @@ export const BlockBtn = props => {
   };
 
   return (
-    <div className="js-block" style={{ textAlign: "center", marginTop: "30px" }} onClick={props.toggleDrawer('bottom', true)}>
+    <div
+      className="js-block"
+      block-id={props.index}
+      onClick={() => {
+        props.toggleDrawer("bottom", true);
+        props.setEditBlockType("cta");
+      }}
+      style={{ textAlign: "center", marginTop: "30px" }}
+    >
       <a
-        href={props.apptree.btn.link}
+        href={props.blockTree.btn.link}
         style={styleButton}
         target="_blank"
         rel="noopener noreferrer"
       >
-        {props.apptree.btn.text}
+        {props.blockTree.btn.text}
       </a>
     </div>
   );

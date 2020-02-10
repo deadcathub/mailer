@@ -12,10 +12,18 @@ export const BlockParagraph = props => {
     marginBottom: "15px"
   };
 
-  const paragraphTextBlocks = props.apptree.paragraph.text.split(/\n/);
+  const paragraphTextBlocks = props.blockTree.paragraph.text.split(/\n/);
 
   return (
-    <div className="js-block" onClick={props.toggleDrawer("bottom", true)}>
+    <div
+      className="js-block"
+      block-id={props.index}
+      onClick={() => {
+        props.setEditBlockType("paragraph");
+        props.toggleDrawer("bottom", true);
+        console.log('click');
+      }}
+    >
       {paragraphTextBlocks.map((paragraphText, index) => {
         return (
           <p style={styleParagraph} key="index">
@@ -26,3 +34,5 @@ export const BlockParagraph = props => {
     </div>
   );
 };
+
+

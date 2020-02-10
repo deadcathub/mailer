@@ -1,7 +1,7 @@
 import React from "react";
 
 export const BlockHeader = props => {
-  const propsTree = props.apptree;
+  const propsTree = props.blockTree;
 
   const styleLogo = {
     width: '100%',
@@ -29,7 +29,7 @@ export const BlockHeader = props => {
   }
 
   return (
-    <div>
+    <div block-id={props.index}>
       <table cellSpacing="0" cellPadding="0" border="0" width="100%">
         <tbody>
           <tr>
