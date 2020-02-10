@@ -17,7 +17,7 @@ export const BlockCta = props => {
       className="js-block"
       block-id={props.index}
       onClick={(e) => {
-        props.setEditBlockType("cta");
+        props.setBlockType("cta");
         props.toggleDrawer("bottom", true)(e);
       }}
       style={{ marginTop: 30, marginBottom: 30 }}
