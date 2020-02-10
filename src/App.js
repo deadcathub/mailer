@@ -48,7 +48,6 @@ export class App extends Component {
     delete localState[this.state.blockType];
     this.setState({ blockTree: localState, blockType: null, bottom: false });
   };
-
   render() {
     return (
       <>
@@ -92,5 +91,8 @@ export class App extends Component {
     );
   }
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 750e9273e6c7a848fd05fb0313fe0f8ad56596b4
