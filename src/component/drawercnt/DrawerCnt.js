@@ -15,7 +15,7 @@ export const DrawerCnt = props => {
         label="Ссылка на картинку"
         multiline
         variant="filled"
-        value={props.blockTree.banner.url}
+        defaultValue={props.blockTree.banner.url}
       />
     );
   } else if (props.editblocktype === "paragraph") {
@@ -26,7 +26,7 @@ export const DrawerCnt = props => {
         multiline
         rows="10"
         variant="filled"
-        value={props.blockTree.paragraph.text}
+        defaultValue={props.blockTree.paragraph.text}
       />
     );
   } else if (props.editblocktype === "cta") {
@@ -36,7 +36,7 @@ export const DrawerCnt = props => {
         label="Текст"
         multiline
         variant="filled"
-        value={props.blockTree.cta.text}
+        defaultValue={props.blockTree.cta.text}
       />
     );
   } else if (props.editblocktype === "btn") {
@@ -46,7 +46,7 @@ export const DrawerCnt = props => {
         label="Текст"
         multiline
         variant="filled"
-        value={props.blockTree.btn.text}
+        defaultValue={props.blockTree.btn.text}
       />
     );
   } else {

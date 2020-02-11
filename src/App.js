@@ -46,7 +46,11 @@ export class App extends Component {
   deleteBlock = () => {
     const localState = this.state.blockTree;
     delete localState[this.state.blockType];
-    this.setState({ blockTree: localState, blockType: null, bottom: false });
+    this.setState({
+      blockTree: localState,
+      blockType: null,
+      bottom: false
+    });
   };
 
   render() {
@@ -92,3 +96,5 @@ export class App extends Component {
     );
   }
 }
+
+
