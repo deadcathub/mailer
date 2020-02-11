@@ -17,11 +17,10 @@ export class App extends Component {
     },
     blockTree: {
       header: {
-        // link: `https://astro7.ru/?hash={AUTOLOGIN_HASH}&utm_source=email&utm_medium=${this.state.linkSet.letterType}&utm_campaign=[bla-bla-bla(-2)][16012020(-2)] &utm_content=navigation&{PIXEL_LETTER_CLICKED}`,
-        text: `Скрытый текст`
+        text: `Вращайте Колесо Фортуны и выигрывайте ценные призы`
       },
       banner: {
-        link: `https://astro7.ru/experts/all/`,
+        // link: `https://astro7.ru/experts/all/`,
         url: `https://user98023.clients-cdnnow.ru/images/newsletter/mail/2019/temporary/mail/fortune-wheel.jpg`
       },
       paragraph: {
@@ -38,9 +37,17 @@ export class App extends Component {
     blockType: null
   };
 
+  сhangeLetterType = e => {
+    const localLinkSet = this.state.linkSet;
+    localLinkSet.letterType = e.target.value;
+    this.setState({ linkSet: localLinkSet });
+  };
+
+  /*
   componentDidMount() {
-    // console.log(this.state.linkSet.letterType);
+    console.log(this.state.linkSet.letterType);
   }
+  */
 
   setBlockType = blockType => {
     this.setState({
@@ -67,13 +74,15 @@ export class App extends Component {
     return (
       <>
         <Container maxWidth="md">
-          <Panel linkSet={this.state.linkSet} />
+          <Panel
+            appState={this.state}
+            сhangeLetterType={this.сhangeLetterType}
+          />
           <LetterWrap>
             <BlockTree
-              blockTree={this.state.blockTree}
+              appState={this.state}
               toggleDrawer={this.toggleDrawer}
               setBlockType={this.setBlockType}
-              linkSet={this.state.linkSet}
             />
           </LetterWrap>
         </Container>

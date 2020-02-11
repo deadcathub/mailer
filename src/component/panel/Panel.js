@@ -6,24 +6,16 @@ import TextField from "@material-ui/core/TextField";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import Radio from "@material-ui/core/Radio";
 import DateFnsUtils from '@date-io/date-fns';
-import {
-  MuiPickersUtilsProvider,
-  KeyboardTimePicker,
-  KeyboardDatePicker,
-} from '@material-ui/pickers';
-
+import { MuiPickersUtilsProvider, KeyboardDatePicker } from '@material-ui/pickers';
 import "./Panel.scss";
 
 export const Panel = props => {
+  const { linkSet, blockTree } = props.appState;
+
   // const inputLabel = React.useRef(null);
   const [basicUrl, setBasicUrl] = useState("");
   const handleChangeSelect = e => {
     setBasicUrl(e.target.value);
-  };
-
-  const [mailType, setMailType] = useState("letter");
-  const handleChangeRadio = e => {
-    setMailType(e.target.value);
   };
 
   const [selectedDate, setSelectedDate] = React.useState(new Date());
@@ -31,16 +23,15 @@ export const Panel = props => {
     setSelectedDate(date);
   };
 
-  useEffect(() => {
-    console.log(basicUrl, mailType);
-  });
+  // useEffect(() => {
+  //   console.log(basicUrl, mailType);
+  // });
 
   return (
     <>
       <ul className="panel">
         <li className="panel_item">
-
-          <RadioGroup row value={mailType} onChange={handleChangeRadio}>
+          <RadioGroup row value={linkSet.letterType} onChange={props.сhangeLetterType}>
             <FormControlLabel
               value="letter"
               control={<Radio color="primary" />}
@@ -50,14 +41,12 @@ export const Panel = props => {
             <FormControlLabel
               value="auto-letter"
               control={<Radio color="primary" />}
-              label="Контентная"
+              label="Автошаблон"
               labelPlacement="end"
             />
           </RadioGroup>
-
         </li>
         <li className="panel_item">
-
           <Grid
             container
             direction="row"
@@ -74,6 +63,14 @@ export const Panel = props => {
               />
             </Grid>
             <Grid item xs={3}>
+              <TextField
+                label="Слоган автошаблона"
+                variant="filled"
+                defaultValue={`landing-page`}
+                onChange={handleChangeSelect}
+              />
+            </Grid>
+            <Grid item xs={3}>
               <MuiPickersUtilsProvider utils={DateFnsUtils}>
                 <KeyboardDatePicker
                   disableToolbar
@@ -81,7 +78,7 @@ export const Panel = props => {
                   disablePast="true"
                   format="dd.MM.yyyy"
                   id="date-picker-inline"
-                  label="Date picker inline"
+                  label="Дата отправки"
                   value={selectedDate}
                   onChange={handleDateChange}
                   KeyboardButtonProps={{
@@ -91,9 +88,10 @@ export const Panel = props => {
               </MuiPickersUtilsProvider>
             </Grid>
           </Grid>
-
         </li>
       </ul>
     </>
   );
 };
+
+

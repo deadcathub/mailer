@@ -1,6 +1,8 @@
 import React from "react";
 
 export const BlockCta = props => {
+  const { blockTree } = props.appState;
+
   const styleCta = {
     maxWidth: "500px",
     fontFamily: "Roboto, Arial, sans-serif",
@@ -16,17 +18,15 @@ export const BlockCta = props => {
     <div
       className="js-block"
       block-id={props.index}
-      onClick={(e) => {
+      onClick={e => {
         props.setBlockType("cta");
         props.toggleDrawer("bottom", true)(e);
       }}
       style={{ marginTop: 30, marginBottom: 30 }}
     >
       <p align="center" valign="top" style={styleCta}>
-        {props.blockTree.cta.text}
+        {blockTree.cta.text}
       </p>
     </div>
   );
 };
-
-

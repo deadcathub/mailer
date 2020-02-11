@@ -1,6 +1,8 @@
 import React from "react";
 
 export const BlockBtn = props => {
+  const { linkSet, blockTree } = props.appState;
+
   const styleButton = {
     fontFamily: "Roboto, Arial, sans-serif",
     fontSize: "15px",
@@ -21,22 +23,20 @@ export const BlockBtn = props => {
     <div
       className="js-block"
       block-id={props.index}
-      onClick={(e) => {
+      onClick={e => {
         props.setBlockType("btn");
         props.toggleDrawer("bottom", true)(e);
       }}
       style={{ textAlign: "center", marginTop: "30px" }}
     >
       <a
-        href={props.blockTree.btn.link}
+        href={blockTree.btn.link}
         style={styleButton}
         target="_blank"
         rel="noopener noreferrer"
       >
-        {props.blockTree.btn.text}
+        {blockTree.btn.text}
       </a>
     </div>
   );
 };
-
-
