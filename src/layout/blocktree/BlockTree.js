@@ -13,7 +13,7 @@ export const BlockTree = props => {
     <>
       {Object.keys(blockTree).map((nodeType, index) => {
         if (nodeType === "header") {
-          return <BlockHeader index={index} key={index} blockTree={blockTree} setBlockType={props.setBlockType} toggleDrawer={props.toggleDrawer} />
+          return <BlockHeader index={index} key={index} blockTree={blockTree} linkSet={props.linkSet} setBlockType={props.setBlockType} toggleDrawer={props.toggleDrawer} />
         } else if (nodeType === "banner") {
           return <BlockBanner index={index} key={index} blockTree={blockTree} setBlockType={props.setBlockType} toggleDrawer={props.toggleDrawer} />
         } else if (nodeType === "paragraph") {

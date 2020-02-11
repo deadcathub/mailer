@@ -1,18 +1,24 @@
 import React, { Component } from "react";
 import Container from "@material-ui/core/Container";
 import Button from "@material-ui/core/Button";
-import { MailWrap } from "./layout/mailwrap/MailWrap";
+import Drawer from "@material-ui/core/Drawer";
+import { LetterWrap } from "./layout/letterwrap/LetterWrap";
 import { BlockTree } from "./layout/blocktree/BlockTree";
 import { Panel } from "./component/panel/Panel";
 import { DrawerCnt } from "./component/drawercnt/DrawerCnt";
 
-import Drawer from "@material-ui/core/Drawer";
-
 export class App extends Component {
   state = {
+    linkSet: {
+      landUrl: 'landing-page',
+      letterType: 'letter',
+      letterSlogan: 'letter-slogan',
+      letterDate: '14102020'
+    },
     blockTree: {
       header: {
-        link: `https://astro7.ru/`
+        // link: `https://astro7.ru/?hash={AUTOLOGIN_HASH}&utm_source=email&utm_medium=${this.state.linkSet.letterType}&utm_campaign=[bla-bla-bla(-2)][16012020(-2)] &utm_content=navigation&{PIXEL_LETTER_CLICKED}`,
+        text: `Скрытый текст`
       },
       banner: {
         link: `https://astro7.ru/experts/all/`,
@@ -31,6 +37,10 @@ export class App extends Component {
     },
     blockType: null
   };
+
+  componentDidMount() {
+    // console.log(this.state.linkSet.letterType);
+  }
 
   setBlockType = blockType => {
     this.setState({
@@ -57,14 +67,15 @@ export class App extends Component {
     return (
       <>
         <Container maxWidth="md">
-          <Panel />
-          <MailWrap>
+          <Panel linkSet={this.state.linkSet} />
+          <LetterWrap>
             <BlockTree
               blockTree={this.state.blockTree}
               toggleDrawer={this.toggleDrawer}
               setBlockType={this.setBlockType}
+              linkSet={this.state.linkSet}
             />
-          </MailWrap>
+          </LetterWrap>
         </Container>
         <Drawer
           className="b-modal"

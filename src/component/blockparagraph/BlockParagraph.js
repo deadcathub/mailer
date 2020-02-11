@@ -18,7 +18,7 @@ export const BlockParagraph = props => {
     <div
       className="js-block"
       block-id={props.index}
-      onClick={(e) => {
+      onClick={e => {
         props.setBlockType("paragraph");
         props.toggleDrawer("bottom", true)(e);
       }}
@@ -33,5 +33,3 @@ export const BlockParagraph = props => {
     </div>
   );
 };
-
-

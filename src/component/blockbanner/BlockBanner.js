@@ -17,7 +17,7 @@ export const BlockBanner = props => {
       className="js-block"
       block-id={props.index}
       href={propsTree.banner.link}
-      onClick={(e) => {
+      onClick={e => {
         props.setBlockType("banner");
         props.toggleDrawer("bottom", true)(e);
       }}

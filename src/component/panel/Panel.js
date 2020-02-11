@@ -1,69 +1,99 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import FormControl from "@material-ui/core/FormControl";
-import InputLabel from "@material-ui/core/InputLabel";
-import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
+import Grid from "@material-ui/core/Grid";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
 import TextField from "@material-ui/core/TextField";
-import './Panel.scss'
+import RadioGroup from "@material-ui/core/RadioGroup";
+import Radio from "@material-ui/core/Radio";
+import DateFnsUtils from '@date-io/date-fns';
+import {
+  MuiPickersUtilsProvider,
+  KeyboardTimePicker,
+  KeyboardDatePicker,
+} from '@material-ui/pickers';
+
+import "./Panel.scss";
 
 export const Panel = props => {
-
-  const useStyles = makeStyles(theme => ({
-    formControl: {
-      minWidth: 200
-    }
-  }));
-  const classes = useStyles();
-
-  const [age, setAge] = useState("");
   // const inputLabel = React.useRef(null);
+  const [basicUrl, setBasicUrl] = useState("");
+  const handleChangeSelect = e => {
+    setBasicUrl(e.target.value);
+  };
+
+  const [mailType, setMailType] = useState("letter");
+  const handleChangeRadio = e => {
+    setMailType(e.target.value);
+  };
+
+  const [selectedDate, setSelectedDate] = React.useState(new Date());
+  const handleDateChange = date => {
+    setSelectedDate(date);
+  };
 
   useEffect(() => {
-    // console.log(age);
-  }, []);
-
-  const handleChange = e => {
-    setAge(e.target.value);
-  };
+    console.log(basicUrl, mailType);
+  });
 
   return (
     <>
       <ul className="panel">
         <li className="panel_item">
-          <FormControl variant="filled" className={classes.formControl}>
-            <InputLabel id="demo-simple-select-filled-label">Тип рассылки</InputLabel>
-            <Select
-              labelId="demo-simple-select-filled-label"
-              id="demo-simple-select-filled"
-              value={age}
-              onChange={handleChange}
-            >
-              <MenuItem value={1}>Разовая</MenuItem>
-              <MenuItem value={2}>Периодическая</MenuItem>
-            </Select>
-          </FormControl>
+
+          <RadioGroup row value={mailType} onChange={handleChangeRadio}>
+            <FormControlLabel
+              value="letter"
+              control={<Radio color="primary" />}
+              label="Обычная"
+              labelPlacement="end"
+            />
+            <FormControlLabel
+              value="auto-letter"
+              control={<Radio color="primary" />}
+              label="Контентная"
+              labelPlacement="end"
+            />
+          </RadioGroup>
+
         </li>
         <li className="panel_item">
-          <TextField
-            label="Слоган акции"
-            id="outlined-size-normal"
-            variant="filled"
-          />
-        </li>
-        <li className="panel_item">
-          <TextField
-            id="filled-textarea"
-            label="Скрытый текст"
-            multiline
-            variant="filled"
-          />
+
+          <Grid
+            container
+            direction="row"
+            justify="flex-start"
+            alignItems="center"
+            spacing={2}
+          >
+            <Grid item xs={3}>
+              <TextField
+                label="URL посадочной"
+                variant="filled"
+                defaultValue={`landing-page`}
+                onChange={handleChangeSelect}
+              />
+            </Grid>
+            <Grid item xs={3}>
+              <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                <KeyboardDatePicker
+                  disableToolbar
+                  inputVariant="filled"
+                  disablePast="true"
+                  format="dd.MM.yyyy"
+                  id="date-picker-inline"
+                  label="Date picker inline"
+                  value={selectedDate}
+                  onChange={handleDateChange}
+                  KeyboardButtonProps={{
+                    'aria-label': 'change date',
+                  }}
+                />
+              </MuiPickersUtilsProvider>
+            </Grid>
+          </Grid>
+
         </li>
       </ul>
     </>
-
   );
 };
-
-

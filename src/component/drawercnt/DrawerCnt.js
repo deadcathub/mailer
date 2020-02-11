@@ -1,14 +1,24 @@
 import React from "react";
 import { useEffect } from "react";
 import TextField from "@material-ui/core/TextField";
-import Container from "@material-ui/core/Container";
 
 export const DrawerCnt = props => {
   useEffect(() => {
     // console.log(age);
-  }, []);
+  });
 
-  if (props.editblocktype === "banner") {
+  if (props.editblocktype === "header") {
+    return (
+      <TextField
+        id="filled-textarea"
+        label="Скрытый текст"
+        multiline
+        variant="filled"
+        defaultValue={props.blockTree.header.text}
+      />
+    );
+    
+  } else if (props.editblocktype === "banner") {
     return (
       <TextField
         id="filled-textarea"
