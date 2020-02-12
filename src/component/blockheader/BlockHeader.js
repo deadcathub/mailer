@@ -3,7 +3,7 @@ import React from "react";
 import { BlockHidden } from "./../blockhidden/BlockHidden";
 
 export const BlockHeader = props => {
-  const { linkSet } = props.appState;
+  const { dataSet } = props.appState;
 
   const styleLogo = {
     width: "100%",
@@ -49,7 +49,7 @@ export const BlockHeader = props => {
                   <tr>
                     <td align="left" valign="middle">
                       <a
-                        href={`https://astro7.ru/?hash={AUTOLOGIN_HASH}&utm_source=email&utm_medium=${linkSet.letterType}&utm_campaign=${linkSet.letterType === 'letter' ? linkSet.letterDate : linkSet.letterSlogan}&utm_content=navigation&{PIXEL_LETTER_CLICKED}`}
+                        href={`https://astro7.ru/?hash={AUTOLOGIN_HASH}&utm_source=email&utm_medium=${dataSet.letterType}&utm_campaign=${dataSet.letterType === 'letter' ? dataSet.letterDate : dataSet.letterSlogan}&utm_content=navigation&{PIXEL_LETTER_CLICKED}`}
                         style={{textDecoration: "none"}}
                         target="_blank"
                         rel="noopener noreferrer"

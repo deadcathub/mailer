@@ -9,11 +9,11 @@ import { DrawerCnt } from "./component/drawercnt/DrawerCnt";
 
 export class App extends Component {
   state = {
-    linkSet: {
+    dataSet: {
       landUrl: 'landing-default',
       letterType: 'letter',
       letterSlogan: 'letter-default',
-      letterDate: '14102020'
+      letterDate: null
     },
     blockTree: {
       header: {
@@ -38,21 +38,20 @@ export class App extends Component {
   };
 
   сhangeLetterType = e => {
-    const localLinkSet = this.state.linkSet;
-    localLinkSet.letterType = e.target.value;
+    const localDataSet = this.state.dataSet;
+    localDataSet.letterType = e.target.value;
     this.setState({
-      linkSet: localLinkSet
+      dataSet: localDataSet
     });
   };
 
-  componentDidMount() {
-    const localLinkSet = this.state.linkSet;
-    localLinkSet.letterDate = 123;
+  handleDateChange = date => {
+    const localDataSet = this.state.dataSet;
+    localDataSet.letterDate = date;
     this.setState({
-      linkSet: localLinkSet
+      dataSet: localDataSet
     });
-    console.log(this.state.linkSet.letterDate);
-  }
+  };
 
   setBlockType = blockType => {
     this.setState({
@@ -75,6 +74,11 @@ export class App extends Component {
     });
   };
 
+  componentDidMount() {
+    
+    console.log('app did mount');
+  }
+
   render() {
     return (
       <>
@@ -82,6 +86,7 @@ export class App extends Component {
           <Panel
             appState={this.state}
             сhangeLetterType={this.сhangeLetterType}
+            handleDateChange={this.handleDateChange}
           />
           <LetterWrap>
             <BlockTree

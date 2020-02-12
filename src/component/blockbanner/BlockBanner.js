@@ -1,7 +1,7 @@
 import React from "react";
 
 export const BlockBanner = props => {
-  const { linkSet, blockTree } = props.appState;
+  const { dataSet, blockTree } = props.appState;
 
   const styleBanner = {
     maxWidth: "100%",
@@ -16,7 +16,7 @@ export const BlockBanner = props => {
     <a
       className="js-block"
       block-id={props.index}
-      href={`https://astro7.ru/${linkSet.landUrl}/?hash={AUTOLOGIN_HASH}&utm_source=email&utm_medium=${linkSet.letterType}&utm_campaign=${linkSet.letterType === 'letter' ? linkSet.letterDate : linkSet.letterSlogan}&utm_content=promo&{PIXEL_LETTER_CLICKED}`}
+      href={`https://astro7.ru/${dataSet.landUrl}/?hash={AUTOLOGIN_HASH}&utm_source=email&utm_medium=${dataSet.letterType}&utm_campaign=${dataSet.letterType === 'letter' ? dataSet.letterDate : dataSet.letterSlogan}&utm_content=promo&{PIXEL_LETTER_CLICKED}`}
       onClick={e => {
         props.setBlockType("banner");
         props.toggleDrawer("bottom", true)(e);

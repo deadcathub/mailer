@@ -10,7 +10,7 @@ import { MuiPickersUtilsProvider, KeyboardDatePicker } from '@material-ui/picker
 import "./Panel.scss";
 
 export const Panel = props => {
-  const { linkSet } = props.appState;
+  const { dataSet } = props.appState;
 
   // const inputLabel = React.useRef(null);
   const [basicUrl, setBasicUrl] = useState("");
@@ -22,10 +22,10 @@ export const Panel = props => {
   // var tomorrow = new Date();
   // tomorrow.setDate(today.getDate()+1);
 
-  const [selectedDate, setSelectedDate] = React.useState(null);
-  const handleDateChange = date => {
-    setSelectedDate(date);
-  };
+  // const [selectedDate, setSelectedDate] = React.useState(null);
+  // const handleDateChange = date => {
+  //   setSelectedDate(date);
+  // };
 
   // useEffect(() => {
   //   console.log(basicUrl, mailType);
@@ -35,7 +35,7 @@ export const Panel = props => {
     <>
       <ul className="panel">
         <li className="panel_item">
-          <RadioGroup row value={linkSet.letterType} onChange={props.сhangeLetterType}>
+          <RadioGroup row value={dataSet.letterType} onChange={props.сhangeLetterType}>
             <FormControlLabel
               value="letter"
               control={<Radio color="primary" />}
@@ -51,7 +51,7 @@ export const Panel = props => {
           </RadioGroup>
         </li>
         <li className="panel_item">
-        {linkSet.letterType === 'letter' ? (
+        {dataSet.letterType === 'letter' ? (
           <Grid
             container
             direction="row"
@@ -75,8 +75,8 @@ export const Panel = props => {
                   format="dd.MM.yyyy"
                   id="date-picker-inline"
                   label="Дата отправки"
-                  value={selectedDate}
-                  onChange={handleDateChange}
+                  value={dataSet.letterDate}
+                  onChange={props.handleDateChange}
                   KeyboardButtonProps={{
                     'aria-label': 'change date',
                   }}

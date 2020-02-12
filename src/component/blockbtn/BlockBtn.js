@@ -1,7 +1,7 @@
 import React from "react";
 
 export const BlockBtn = props => {
-  const { linkSet, blockTree } = props.appState;
+  const { dataSet, blockTree } = props.appState;
 
   const styleButton = {
     fontFamily: "Roboto, Arial, sans-serif",
@@ -30,7 +30,7 @@ export const BlockBtn = props => {
       style={{ textAlign: "center", marginTop: "30px" }}
     >
       <a
-        href={`https://astro7.ru/${linkSet.landUrl}/?hash={AUTOLOGIN_HASH}&utm_source=email&utm_medium=${linkSet.letterType}&utm_campaign=${linkSet.letterType === 'letter' ? linkSet.letterDate : linkSet.letterSlogan}&utm_content=button&{PIXEL_LETTER_CLICKED}`}
+        href={`https://astro7.ru/${dataSet.landUrl}/?hash={AUTOLOGIN_HASH}&utm_source=email&utm_medium=${dataSet.letterType}&utm_campaign=${dataSet.letterType === 'letter' ? dataSet.letterDate : dataSet.letterSlogan}&utm_content=button&{PIXEL_LETTER_CLICKED}`}
         style={styleButton}
         target="_blank"
         rel="noopener noreferrer"
