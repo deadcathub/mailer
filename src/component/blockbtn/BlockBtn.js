@@ -30,7 +30,7 @@ export const BlockBtn = props => {
       style={{ textAlign: "center", marginTop: "30px" }}
     >
       <a
-        href={blockTree.btn.link}
+        href={`https://astro7.ru/${linkSet.landUrl}/?hash={AUTOLOGIN_HASH}&utm_source=email&utm_medium=${linkSet.letterType}&utm_campaign=${linkSet.letterType === 'letter' ? linkSet.letterDate : linkSet.letterSlogan}&utm_content=button&{PIXEL_LETTER_CLICKED}`}
         style={styleButton}
         target="_blank"
         rel="noopener noreferrer"
@@ -40,3 +40,5 @@ export const BlockBtn = props => {
     </div>
   );
 };
+
+

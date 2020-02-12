@@ -10,9 +10,9 @@ import { DrawerCnt } from "./component/drawercnt/DrawerCnt";
 export class App extends Component {
   state = {
     linkSet: {
-      landUrl: 'landing-page',
+      landUrl: 'landing-default',
       letterType: 'letter',
-      letterSlogan: 'letter-slogan',
+      letterSlogan: 'letter-default',
       letterDate: '14102020'
     },
     blockTree: {
