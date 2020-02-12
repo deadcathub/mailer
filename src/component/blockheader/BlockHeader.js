@@ -3,9 +3,7 @@ import React from "react";
 import { BlockHidden } from "./../blockhidden/BlockHidden";
 
 export const BlockHeader = props => {
-  const { linkSet, blockTree } = props.appState;
-
-  const appState = props.appState;
+  const { linkSet } = props.appState;
 
   const styleLogo = {
     width: "100%",

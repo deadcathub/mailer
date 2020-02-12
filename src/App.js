@@ -40,14 +40,19 @@ export class App extends Component {
   сhangeLetterType = e => {
     const localLinkSet = this.state.linkSet;
     localLinkSet.letterType = e.target.value;
-    this.setState({ linkSet: localLinkSet });
+    this.setState({
+      linkSet: localLinkSet
+    });
   };
 
-  /*
   componentDidMount() {
-    console.log(this.state.linkSet.letterType);
+    const localLinkSet = this.state.linkSet;
+    localLinkSet.letterDate = 123;
+    this.setState({
+      linkSet: localLinkSet
+    });
+    console.log(this.state.linkSet.letterDate);
   }
-  */
 
   setBlockType = blockType => {
     this.setState({

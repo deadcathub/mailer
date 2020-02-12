@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import TextField from "@material-ui/core/TextField";
@@ -10,7 +10,7 @@ import { MuiPickersUtilsProvider, KeyboardDatePicker } from '@material-ui/picker
 import "./Panel.scss";
 
 export const Panel = props => {
-  const { linkSet, blockTree } = props.appState;
+  const { linkSet } = props.appState;
 
   // const inputLabel = React.useRef(null);
   const [basicUrl, setBasicUrl] = useState("");
@@ -18,7 +18,11 @@ export const Panel = props => {
     setBasicUrl(e.target.value);
   };
 
-  const [selectedDate, setSelectedDate] = React.useState(new Date());
+  // var today = new Date();
+  // var tomorrow = new Date();
+  // tomorrow.setDate(today.getDate()+1);
+
+  const [selectedDate, setSelectedDate] = React.useState(null);
   const handleDateChange = date => {
     setSelectedDate(date);
   };
@@ -47,6 +51,7 @@ export const Panel = props => {
           </RadioGroup>
         </li>
         <li className="panel_item">
+        {linkSet.letterType === 'letter' ? (
           <Grid
             container
             direction="row"
@@ -58,15 +63,6 @@ export const Panel = props => {
               <TextField
                 label="URL посадочной"
                 variant="filled"
-                defaultValue={`landing-page`}
-                onChange={handleChangeSelect}
-              />
-            </Grid>
-            <Grid item xs={3}>
-              <TextField
-                label="Слоган автошаблона"
-                variant="filled"
-                defaultValue={`landing-page`}
                 onChange={handleChangeSelect}
               />
             </Grid>
@@ -88,6 +84,31 @@ export const Panel = props => {
               </MuiPickersUtilsProvider>
             </Grid>
           </Grid>
+        ) : (
+          <Grid
+            container
+            direction="row"
+            justify="flex-start"
+            alignItems="center"
+            spacing={2}
+          >
+            <Grid item xs={3}>
+              <TextField
+                label="URL посадочной"
+                variant="filled"
+                onChange={handleChangeSelect}
+              />
+            </Grid>
+            <Grid item xs={3}>
+              <TextField
+                label="Слоган автошаблона"
+                variant="filled"
+                onChange={handleChangeSelect}
+              />
+            </Grid>
+          </Grid>
+        )}
+          
         </li>
       </ul>
     </>
