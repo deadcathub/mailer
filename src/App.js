@@ -10,9 +10,9 @@ import { DrawerCnt } from "./component/drawercnt/DrawerCnt";
 export class App extends Component {
   state = {
     dataSet: {
-      landUrl: 'landing-default',
+      landUrl: undefined,
       letterType: 'letter',
-      letterSlogan: 'letter-default',
+      letterSlogan: undefined,
       letterDate: null
     },
     blockTree: {
