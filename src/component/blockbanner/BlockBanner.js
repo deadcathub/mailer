@@ -16,7 +16,15 @@ export const BlockBanner = props => {
     <a
       className="js-block"
       block-id={props.index}
-      href={`https://astro7.ru/${dataSet.landUrl}/?hash={AUTOLOGIN_HASH}&utm_source=email&utm_medium=${dataSet.letterType}&utm_campaign=${dataSet.letterType === 'letter' ? dataSet.letterDate : dataSet.letterSlogan}&utm_content=promo&{PIXEL_LETTER_CLICKED}`}
+      href={`https://astro7.ru/${
+        dataSet.landUrl
+      }/?hash={AUTOLOGIN_HASH}&utm_source=email&utm_medium=${
+        dataSet.letterType
+      }&utm_campaign=${
+        dataSet.letterType === "letter"
+          ? dataSet.letterDateFormat
+          : dataSet.letterSlogan
+      }&utm_content=promo&{PIXEL_LETTER_CLICKED}`}
       onClick={e => {
         props.setBlockType("banner");
         props.toggleDrawer("bottom", true)(e);
@@ -35,5 +43,3 @@ export const BlockBanner = props => {
     </a>
   );
 };
-
-

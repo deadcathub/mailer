@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import TextField from "@material-ui/core/TextField";
 
 export const DrawerCnt = props => {
+  const blockTree = props.blockTree;
   useEffect(() => {
     // console.log(age);
   });
@@ -14,7 +15,7 @@ export const DrawerCnt = props => {
         label="Скрытый текст"
         multiline
         variant="filled"
-        defaultValue={props.blockTree.header.text}
+        defaultValue={blockTree.header.text}
       />
     );
     
@@ -25,7 +26,7 @@ export const DrawerCnt = props => {
         label="Ссылка на картинку"
         multiline
         variant="filled"
-        defaultValue={props.blockTree.banner.url}
+        defaultValue={blockTree.banner.url}
       />
     );
   } else if (props.editblocktype === "paragraph") {
@@ -36,7 +37,7 @@ export const DrawerCnt = props => {
         multiline
         rows="10"
         variant="filled"
-        defaultValue={props.blockTree.paragraph.text}
+        defaultValue={blockTree.paragraph.text}
       />
     );
   } else if (props.editblocktype === "cta") {
@@ -46,7 +47,7 @@ export const DrawerCnt = props => {
         label="Текст"
         multiline
         variant="filled"
-        defaultValue={props.blockTree.cta.text}
+        defaultValue={blockTree.cta.text}
       />
     );
   } else if (props.editblocktype === "btn") {
@@ -56,7 +57,7 @@ export const DrawerCnt = props => {
         label="Текст"
         multiline
         variant="filled"
-        defaultValue={props.blockTree.btn.text}
+        defaultValue={blockTree.btn.text}
       />
     );
   } else {

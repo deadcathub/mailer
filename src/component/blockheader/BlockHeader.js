@@ -1,10 +1,20 @@
 import React from "react";
 // import { useEffect } from "react";
-import { BlockHidden } from "./../blockhidden/BlockHidden";
 
 export const BlockHeader = props => {
-  const { dataSet } = props.appState;
+  const { dataSet, blockTree } = props.appState;
 
+  const styleHiddenText = {
+    maxHeight: "0",
+    maxWidth: "0",
+    fontFamily: "Roboto, Arial, sans-serif",
+    fontSize: "1px",
+    lineHeight: "1px",
+    opacity: "0",
+    overflow: "hidden",
+    display: "none",
+    msoHide: "all"
+  };
   const styleLogo = {
     width: "100%",
     maxWidth: "130px",
@@ -39,7 +49,9 @@ export const BlockHeader = props => {
         props.toggleDrawer("bottom", true)(e);
       }}
     >
-      <BlockHidden appState={props.appState} />
+      <div style={styleHiddenText}>
+        {blockTree.header.text}
+      </div>
       <table cellSpacing="0" cellPadding="0" border="0" width="100%">
         <tbody>
           <tr>
@@ -49,8 +61,14 @@ export const BlockHeader = props => {
                   <tr>
                     <td align="left" valign="middle">
                       <a
-                        href={`https://astro7.ru/?hash={AUTOLOGIN_HASH}&utm_source=email&utm_medium=${dataSet.letterType}&utm_campaign=${dataSet.letterType === 'letter' ? dataSet.letterDate : dataSet.letterSlogan}&utm_content=navigation&{PIXEL_LETTER_CLICKED}`}
-                        style={{textDecoration: "none"}}
+                        href={`https://astro7.ru/?hash={AUTOLOGIN_HASH}&utm_source=email&utm_medium=${
+                          dataSet.letterType
+                        }&utm_campaign=${
+                          dataSet.letterType === "letter"
+                            ? dataSet.letterDateFormat
+                            : dataSet.letterSlogan
+                        }&utm_content=navigation&{PIXEL_LETTER_CLICKED}`}
+                        style={{ textDecoration: "none" }}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -103,5 +121,3 @@ export const BlockHeader = props => {
     </div>
   );
 };
-
-

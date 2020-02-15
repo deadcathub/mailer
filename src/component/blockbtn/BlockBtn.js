@@ -30,7 +30,15 @@ export const BlockBtn = props => {
       style={{ textAlign: "center", marginTop: "30px" }}
     >
       <a
-        href={`https://astro7.ru/${dataSet.landUrl}/?hash={AUTOLOGIN_HASH}&utm_source=email&utm_medium=${dataSet.letterType}&utm_campaign=${dataSet.letterType === 'letter' ? dataSet.letterDate : dataSet.letterSlogan}&utm_content=button&{PIXEL_LETTER_CLICKED}`}
+        href={`https://astro7.ru/${
+          dataSet.landUrl
+        }/?hash={AUTOLOGIN_HASH}&utm_source=email&utm_medium=${
+          dataSet.letterType
+        }&utm_campaign=${
+          dataSet.letterType === "letter"
+            ? dataSet.letterDateFormat
+            : dataSet.letterSlogan
+        }&utm_content=button&{PIXEL_LETTER_CLICKED}`}
         style={styleButton}
         target="_blank"
         rel="noopener noreferrer"
@@ -40,5 +48,3 @@ export const BlockBtn = props => {
     </div>
   );
 };
-
-

@@ -13,7 +13,8 @@ export class App extends Component {
       landUrl: undefined,
       letterType: "letter",
       letterSlogan: undefined,
-      letterDate: null
+      letterDate: null,
+      letterDateFormat: null
     },
     blockTree: {
       header: {
@@ -24,7 +25,7 @@ export class App extends Component {
       },
       paragraph: {
         text: `Вы можете вращать Колесо Фортуны и выигрывать подарки каждые субботу и воскресенье. А сегодня мы добавляем до 12 мин. к консультациям, заказанным через Центр поддержки клиентов.
-               Чтобы вы могли убедиться в том, что консультации гадалок по телефону действительно эффективны, мы предоставляем возможность заказать гадание по телефону бесплатно.`
+              Чтобы вы могли убедиться в том, что консультации гадалок по телефону действительно эффективны, мы предоставляем возможность заказать гадание по телефону бесплатно.`
       },
       cta: {
         text: `Вращайте Колесо Фортуны и выигрывайте ценные призы`
@@ -59,11 +60,14 @@ export class App extends Component {
   };
 
   handleDateChange = date => {
-    const localDataSet = this.state.dataSet;
+    const localDataSet = this.state.dataSet,
+      formatDate = String(date.getDate()).padStart(2, '0') + String(date.getMonth() + 1).padStart(2, '0') + String(date.getFullYear());
     localDataSet.letterDate = date;
+    localDataSet.letterDateFormat = formatDate;
     this.setState({
       dataSet: localDataSet
     });
+    console.log(formatDate);
   };
 
   setBlockType = blockType => {
