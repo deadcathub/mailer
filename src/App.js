@@ -45,6 +45,15 @@ export class App extends Component {
     });
   };
 
+  handleInput = e => {
+    const localDataSet = this.state.dataSet;
+    localDataSet.landUrl = e.target.value;
+    console.log(e.target.value);
+    this.setState({
+      dataSet: localDataSet
+    });
+  };
+
   handleDateChange = date => {
     const localDataSet = this.state.dataSet;
     localDataSet.letterDate = date;
@@ -75,7 +84,6 @@ export class App extends Component {
   };
 
   componentDidMount() {
-    
     console.log('app did mount');
   }
 
@@ -85,6 +93,7 @@ export class App extends Component {
         <Container maxWidth="md">
           <Panel
             appState={this.state}
+            handleInput={this.handleInput}
             сhangeLetterType={this.сhangeLetterType}
             handleDateChange={this.handleDateChange}
           />

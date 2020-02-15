@@ -63,7 +63,7 @@ export const Panel = props => {
               <TextField
                 label="URL посадочной"
                 variant="filled"
-                onChange={handleChangeSelect}
+                onChange={props.handleInput}
               />
             </Grid>
             <Grid item xs={3}>
@@ -96,7 +96,7 @@ export const Panel = props => {
               <TextField
                 label="URL посадочной"
                 variant="filled"
-                onChange={handleChangeSelect}
+                onChange={props.handleInput}
               />
             </Grid>
             <Grid item xs={3}>
