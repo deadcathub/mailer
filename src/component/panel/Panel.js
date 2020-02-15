@@ -12,12 +12,6 @@ import "./Panel.scss";
 export const Panel = props => {
   const { dataSet } = props.appState;
 
-  // const inputLabel = React.useRef(null);
-  const [basicUrl, setBasicUrl] = useState("");
-  const handleChangeSelect = e => {
-    setBasicUrl(e.target.value);
-  };
-
   // var today = new Date();
   // var tomorrow = new Date();
   // tomorrow.setDate(today.getDate()+1);
@@ -51,7 +45,6 @@ export const Panel = props => {
           </RadioGroup>
         </li>
         <li className="panel_item">
-        {dataSet.letterType === 'letter' ? (
           <Grid
             container
             direction="row"
@@ -61,12 +54,14 @@ export const Panel = props => {
           >
             <Grid item xs={3}>
               <TextField
+                onChange={props.handleInput}
+                name="landUrl"
                 label="URL посадочной"
                 variant="filled"
-                onChange={props.handleInput}
               />
             </Grid>
             <Grid item xs={3}>
+            {dataSet.letterType === 'letter' ? (
               <MuiPickersUtilsProvider utils={DateFnsUtils}>
                 <KeyboardDatePicker
                   disableToolbar
@@ -82,33 +77,17 @@ export const Panel = props => {
                   }}
                 />
               </MuiPickersUtilsProvider>
-            </Grid>
-          </Grid>
-        ) : (
-          <Grid
-            container
-            direction="row"
-            justify="flex-start"
-            alignItems="center"
-            spacing={2}
-          >
-            <Grid item xs={3}>
+            ) : (
               <TextField
-                label="URL посадочной"
-                variant="filled"
                 onChange={props.handleInput}
-              />
-            </Grid>
-            <Grid item xs={3}>
-              <TextField
+                defaultValue={dataSet.letterSlogan}
+                name="letterSlogan"
                 label="Слоган автошаблона"
                 variant="filled"
-                onChange={handleChangeSelect}
               />
+            )}
             </Grid>
           </Grid>
-        )}
-          
         </li>
       </ul>
     </>

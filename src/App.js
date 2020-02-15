@@ -46,9 +46,13 @@ export class App extends Component {
   };
 
   handleInput = e => {
-    const localDataSet = this.state.dataSet;
-    localDataSet.landUrl = e.target.value;
-    console.log(e.target.value);
+    const localDataSet = this.state.dataSet,
+          targetName = e.target.name;
+    if (targetName === "landUrl") {
+      localDataSet.landUrl = e.target.value;
+    } else if (targetName === "letterSlogan") {
+      localDataSet.letterSlogan = e.target.value;
+    }
     this.setState({
       dataSet: localDataSet
     });
