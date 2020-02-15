@@ -15,7 +15,7 @@ export const BlockTree = props => {
     <>
       {Object.keys(props.appState.blockTree).map((nodeType, index) => {
         if (nodeType === "header") {
-          return <BlockHeader index={index} key={index} appState={appState} setBlockType={setBlockType} toggleDrawer={toggleDrawer} сhangeLetterType={props.сhangeLetterType} />
+          return <BlockHeader index={index} key={index} appState={appState} setBlockType={setBlockType} toggleDrawer={toggleDrawer} />
         } else if (nodeType === "banner") {
           return <BlockBanner index={index} key={index} appState={appState} setBlockType={setBlockType} toggleDrawer={toggleDrawer} />
         } else if (nodeType === "paragraph") {

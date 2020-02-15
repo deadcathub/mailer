@@ -11,7 +11,7 @@ export class App extends Component {
   state = {
     dataSet: {
       landUrl: undefined,
-      letterType: 'letter',
+      letterType: "letter",
       letterSlogan: undefined,
       letterDate: null
     },
@@ -20,11 +20,11 @@ export class App extends Component {
         text: `Вращайте Колесо Фортуны и выигрывайте ценные призы`
       },
       banner: {
-        // link: `https://astro7.ru/experts/all/`,
         url: `https://user98023.clients-cdnnow.ru/images/newsletter/mail/2019/temporary/mail/fortune-wheel.jpg`
       },
       paragraph: {
-        text: `Вы можете вращать Колесо Фортуны и выигрывать подарки каждые субботу и воскресенье. А сегодня мы добавляем до 12 мин. к консультациям, заказанным через Центр поддержки клиентов.\nЧтобы вы могли убедиться в том, что консультации гадалок по телефону действительно эффективны, мы предоставляем возможность заказать гадание по телефону бесплатно.`
+        text: `Вы можете вращать Колесо Фортуны и выигрывать подарки каждые субботу и воскресенье. А сегодня мы добавляем до 12 мин. к консультациям, заказанным через Центр поддержки клиентов.
+               Чтобы вы могли убедиться в том, что консультации гадалок по телефону действительно эффективны, мы предоставляем возможность заказать гадание по телефону бесплатно.`
       },
       cta: {
         text: `Вращайте Колесо Фортуны и выигрывайте ценные призы`
@@ -47,7 +47,7 @@ export class App extends Component {
 
   handleInput = e => {
     const localDataSet = this.state.dataSet,
-          targetName = e.target.name;
+      targetName = e.target.name;
     if (targetName === "landUrl") {
       localDataSet.landUrl = e.target.value;
     } else if (targetName === "letterSlogan") {
@@ -87,9 +87,9 @@ export class App extends Component {
     });
   };
 
-  componentDidMount() {
-    console.log('app did mount');
-  }
+  // componentDidMount() {
+  //   console.log('app did mount');
+  // }
 
   render() {
     return (
@@ -139,5 +139,3 @@ export class App extends Component {
     );
   }
 }
-
-

@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import TextField from "@material-ui/core/TextField";
@@ -11,15 +10,6 @@ import "./Panel.scss";
 
 export const Panel = props => {
   const { dataSet } = props.appState;
-
-  // var today = new Date();
-  // var tomorrow = new Date();
-  // tomorrow.setDate(today.getDate()+1);
-
-  // const [selectedDate, setSelectedDate] = React.useState(null);
-  // const handleDateChange = date => {
-  //   setSelectedDate(date);
-  // };
 
   // useEffect(() => {
   //   console.log(basicUrl, mailType);
@@ -70,6 +60,8 @@ export const Panel = props => {
                   format="dd.MM.yyyy"
                   id="date-picker-inline"
                   label="Дата отправки"
+                  invalidDateMessage={null}
+                  minDateMessage={null}
                   value={dataSet.letterDate}
                   onChange={props.handleDateChange}
                   KeyboardButtonProps={{
