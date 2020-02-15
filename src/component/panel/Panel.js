@@ -1,12 +1,14 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
+import Button from "@material-ui/core/Button";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import TextField from "@material-ui/core/TextField";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import Radio from "@material-ui/core/Radio";
+import Icon from '@material-ui/core/Icon';
+import SaveIcon from '@material-ui/icons/Save';
 import DateFnsUtils from '@date-io/date-fns';
 import { MuiPickersUtilsProvider, KeyboardDatePicker } from '@material-ui/pickers';
-import "./Panel.scss";
 
 export const Panel = props => {
   const { dataSet } = props.appState;
@@ -77,6 +79,17 @@ export const Panel = props => {
                 variant="filled"
               />
             )}
+            </Grid>
+            <Grid item xs={3}>
+              <Button
+                size="large"
+                color="primary"
+                variant="contained"
+                startIcon={<SaveIcon />}
+                onClick={props.copyLetterCode}
+              >
+                Сохранить
+              </Button>
             </Grid>
           </Grid>
         </li>

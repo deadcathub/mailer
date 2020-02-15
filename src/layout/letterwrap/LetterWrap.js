@@ -2,8 +2,8 @@ import React from "react";
 import { BlockFooter } from "./../../component/blockfooter/BlockFooter";
 
 export const LetterWrap = props => (
-  <div className="letter-wrap">
-    <center className="js-letter" style={{ width: "100%", textAlign: "left" }}>
+  <div className="js-letter letter-wrap">
+    <center style={{ width: "100%", textAlign: "left" }}>
       <div
         style={{
           maxWidth: "680px",

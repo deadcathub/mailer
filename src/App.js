@@ -22,7 +22,8 @@ export class App extends Component {
         text: "Вращайте Колесо Фортуны и выигрывайте ценные призы"
       },
       banner: {
-        url: "https://user98023.clients-cdnnow.ru/images/newsletter/mail/2019/temporary/mail/fortune-wheel.jpg",
+        url:
+          "https://user98023.clients-cdnnow.ru/images/newsletter/mail/2019/temporary/mail/fortune-wheel.jpg",
         alt: "Lorem ipsum dolor sit amet, consectetur"
       },
       paragraph: {
@@ -95,19 +96,18 @@ export class App extends Component {
 
   submitDrawerData = e => {
     const localState = this.state.blockTree[this.state.blockType];
-    if ( localState.url ) {
+    if (localState.url) {
       localState.url = e.target.urlField.value;
     }
-    if ( localState.link ) {
+    if (localState.link) {
       localState.link = e.target.linkField.value;
     }
-    if ( localState.text ) {
+    if (localState.text) {
       localState.text = e.target.textField.value;
     }
-    if ( localState.alt ) {
+    if (localState.alt) {
       localState.alt = e.target.altField.value;
     }
-
     this.setState({
       // blockTree: localState, ???????????
       blockType: null,
@@ -116,9 +116,16 @@ export class App extends Component {
     e.preventDefault();
   };
 
-  // componentDidMount() {
-  //   console.log('app did mount');
-  // }
+  copyLetterCode = () => {
+    // var target = document.getElementById('sig'),
+    const target = document.querySelector(".js-letter"),
+      rng = document.createRange(),
+      sel = window.getSelection();
+    rng.selectNode(target);
+    sel.removeAllRanges();
+    sel.addRange(rng);
+    document.execCommand("copy");
+  };
 
   render() {
     return (
@@ -129,6 +136,7 @@ export class App extends Component {
             handleInput={this.handleInput}
             сhangeLetterType={this.сhangeLetterType}
             handleDateChange={this.handleDateChange}
+            copyLetterCode={this.copyLetterCode}
           />
           <LetterWrap>
             <BlockTree
@@ -148,7 +156,11 @@ export class App extends Component {
             maxWidth="md"
             style={{ paddingTop: "50px", paddingBottom: "100px" }}
           >
-            <form onSubmit={this.submitDrawerData} noValidate autoComplete="off">
+            <form
+              onSubmit={this.submitDrawerData}
+              noValidate
+              autoComplete="off"
+            >
               <DrawerCnt
                 blockTree={this.state.blockTree}
                 blockType={this.state.blockType}
