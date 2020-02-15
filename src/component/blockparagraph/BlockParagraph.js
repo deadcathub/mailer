@@ -26,11 +26,15 @@ export const BlockParagraph = props => {
       }}
     >
       {paragraphTextBlocks.map((paragraphText, index) => {
-        return (
-          <p style={styleParagraph} key="index">
-            {paragraphText}
-          </p>
-        );
+        if (paragraphText) {
+          return (
+            <p style={styleParagraph} key={index}>
+              {paragraphText}
+            </p>
+          );
+        } else {
+          return null;
+        }
       })}
     </div>
   );

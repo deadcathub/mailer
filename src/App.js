@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Drawer from "@material-ui/core/Drawer";
 import { LetterWrap } from "./layout/letterwrap/LetterWrap";
@@ -18,21 +19,20 @@ export class App extends Component {
     },
     blockTree: {
       header: {
-        text: `Вращайте Колесо Фортуны и выигрывайте ценные призы`
+        text: "Вращайте Колесо Фортуны и выигрывайте ценные призы"
       },
       banner: {
-        url: `https://user98023.clients-cdnnow.ru/images/newsletter/mail/2019/temporary/mail/fortune-wheel.jpg`
+        url: "https://user98023.clients-cdnnow.ru/images/newsletter/mail/2019/temporary/mail/fortune-wheel.jpg",
+        alt: "Lorem ipsum dolor sit amet, consectetur"
       },
       paragraph: {
-        text: `Вы можете вращать Колесо Фортуны и выигрывать подарки каждые субботу и воскресенье. А сегодня мы добавляем до 12 мин. к консультациям, заказанным через Центр поддержки клиентов.
-              Чтобы вы могли убедиться в том, что консультации гадалок по телефону действительно эффективны, мы предоставляем возможность заказать гадание по телефону бесплатно.`
+        text: `Вы можете вращать Колесо Фортуны и выигрывать подарки каждые субботу и воскресенье. А сегодня мы добавляем до 12 мин. к консультациям, заказанным через Центр поддержки клиентов.\n\nЧтобы вы могли убедиться в том, что консультации гадалок по телефону действительно эффективны, мы предоставляем возможность заказать гадание по телефону бесплатно.`
       },
       cta: {
-        text: `Вращайте Колесо Фортуны и выигрывайте ценные призы`
+        text: "Вращайте Колесо Фортуны и выигрывайте ценные призы"
       },
       btn: {
-        link: `https://astro7.ru/experts/all/`,
-        text: `Вращать колесо`
+        text: "Вращать колесо"
       }
     },
     blockType: null
@@ -61,13 +61,15 @@ export class App extends Component {
 
   handleDateChange = date => {
     const localDataSet = this.state.dataSet,
-      formatDate = String(date.getDate()).padStart(2, '0') + String(date.getMonth() + 1).padStart(2, '0') + String(date.getFullYear());
+      formatDate =
+        String(date.getDate()).padStart(2, "0") +
+        String(date.getMonth() + 1).padStart(2, "0") +
+        String(date.getFullYear());
     localDataSet.letterDate = date;
     localDataSet.letterDateFormat = formatDate;
     this.setState({
       dataSet: localDataSet
     });
-    console.log(formatDate);
   };
 
   setBlockType = blockType => {
@@ -89,6 +91,29 @@ export class App extends Component {
       blockType: null,
       bottom: false
     });
+  };
+
+  submitDrawerData = e => {
+    const localState = this.state.blockTree[this.state.blockType];
+    if ( localState.url ) {
+      localState.url = e.target.urlField.value;
+    }
+    if ( localState.link ) {
+      localState.link = e.target.linkField.value;
+    }
+    if ( localState.text ) {
+      localState.text = e.target.textField.value;
+    }
+    if ( localState.alt ) {
+      localState.alt = e.target.altField.value;
+    }
+
+    this.setState({
+      // blockTree: localState, ???????????
+      blockType: null,
+      bottom: false
+    });
+    e.preventDefault();
   };
 
   // componentDidMount() {
@@ -119,24 +144,35 @@ export class App extends Component {
           open={this.state.bottom}
           onClose={this.toggleDrawer("bottom", false)}
         >
-          <Container maxWidth="md" style={{ paddingTop: "50px" }}>
-            <DrawerCnt
-              anchor={"bottom"}
-              blockTree={this.state.blockTree}
-              editblocktype={this.state.blockType}
-            />
-          </Container>
           <Container
-            className="b-modal_panel"
             maxWidth="md"
-            style={{ paddingTop: "20px", paddingBottom: "50px" }}
+            style={{ paddingTop: "50px", paddingBottom: "100px" }}
           >
-            <Button onClick={this.deleteBlock} size="large">
-              Удалить
-            </Button>
-            <Button size="large" color="primary" variant="contained">
-              Сохранить
-            </Button>
+            <form onSubmit={this.submitDrawerData} noValidate autoComplete="off">
+              <DrawerCnt
+                blockTree={this.state.blockTree}
+                blockType={this.state.blockType}
+              />
+              <Grid
+                container
+                className="b-modal_panel"
+                direction="row"
+                justify="space-between"
+                alignItems="center"
+              >
+                <Button onClick={this.deleteBlock} size="large">
+                  Удалить
+                </Button>
+                <Button
+                  size="large"
+                  color="primary"
+                  variant="contained"
+                  type="submit"
+                >
+                  Сохранить
+                </Button>
+              </Grid>
+            </form>
           </Container>
         </Drawer>
       </>

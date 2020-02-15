@@ -38,7 +38,7 @@ export const BlockBanner = props => {
         style={styleBanner}
         width="680"
         height=""
-        alt=""
+        alt={blockTree.banner.alt}
       />
     </a>
   );

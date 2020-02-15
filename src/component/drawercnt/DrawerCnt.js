@@ -1,68 +1,81 @@
 import React from "react";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import TextField from "@material-ui/core/TextField";
 
 export const DrawerCnt = props => {
-  const blockTree = props.blockTree;
-  useEffect(() => {
-    // console.log(age);
-  });
+  const blockTree = props.blockTree,
+    blockType = props.blockType;
 
-  if (props.editblocktype === "header") {
+  // useEffect(() => {
+  //   console.log(age);
+  // });
+
+  if (blockType === "header") {
     return (
       <TextField
-        id="filled-textarea"
+        name="textField"
         label="Скрытый текст"
-        multiline
-        variant="filled"
         defaultValue={blockTree.header.text}
-      />
-    );
-    
-  } else if (props.editblocktype === "banner") {
-    return (
-      <TextField
-        id="filled-textarea"
-        label="Ссылка на картинку"
+        fullWidth
         multiline
         variant="filled"
-        defaultValue={blockTree.banner.url}
       />
     );
-  } else if (props.editblocktype === "paragraph") {
+  } else if (blockType === "banner") {
+    return (
+      <>
+        <TextField
+          name="urlField"
+          label="URL баннера"
+          defaultValue={blockTree.banner.url}
+          fullWidth
+          multiline
+          variant="filled"
+        />
+        <TextField
+          name="altField"
+          label="ALT баннера"
+          defaultValue={blockTree.banner.alt}
+          fullWidth
+          multiline
+          variant="filled"
+        />
+      </>
+    );
+  } else if (blockType === "paragraph") {
     return (
       <TextField
-        id="filled-textarea"
-        label="Текст"
-        multiline
-        rows="10"
-        variant="filled"
+        name="textField"
+        label="Текст рассылки"
         defaultValue={blockTree.paragraph.text}
-      />
-    );
-  } else if (props.editblocktype === "cta") {
-    return (
-      <TextField
-        id="filled-textarea"
-        label="Текст"
+        fullWidth
         multiline
         variant="filled"
+      />
+    );
+  } else if (blockType === "cta") {
+    return (
+      <TextField
+        name="textField"
+        label="Текст CTA"
         defaultValue={blockTree.cta.text}
-      />
-    );
-  } else if (props.editblocktype === "btn") {
-    return (
-      <TextField
-        id="filled-textarea"
-        label="Текст"
+        fullWidth
         multiline
         variant="filled"
+      />
+    );
+  } else if (blockType === "btn") {
+    return (
+      <TextField
+        name="textField"
+        label="Текст кнопки"
         defaultValue={blockTree.btn.text}
+        fullWidth
+        multiline
+        variant="filled"
       />
     );
   } else {
     return null;
   }
 };
-
-

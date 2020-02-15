@@ -23,7 +23,7 @@ export const Panel = props => {
             <FormControlLabel
               value="letter"
               control={<Radio color="primary" />}
-              label="Обычная"
+              label="Обычная рассылка"
               labelPlacement="end"
             />
             <FormControlLabel
@@ -58,7 +58,6 @@ export const Panel = props => {
                   inputVariant="filled"
                   disablePast="true"
                   format="dd.MM.yyyy"
-                  id="date-picker-inline"
                   label="Дата отправки"
                   invalidDateMessage={null}
                   minDateMessage={null}
