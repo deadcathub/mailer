@@ -117,15 +117,16 @@ export class App extends Component {
     e.preventDefault();
   };
 
-  copyLetterCode = () => {
-    const target = document.querySelector(".js-letter"),
-      rng = document.createRange(),
-      sel = window.getSelection();
-    rng.selectNode(target);
-    sel.removeAllRanges();
-    sel.addRange(rng);
-    document.execCommand("copy");
-  };
+  componentDidMount() {
+    document.querySelector(".js-btn").addEventListener('click', function() {
+      const el = document.createElement('textarea');
+      el.value = document.querySelector(".js-letter").innerHTML;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    });
+  }
 
   render() {
     return (
