@@ -5,8 +5,6 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import TextField from "@material-ui/core/TextField";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import Radio from "@material-ui/core/Radio";
-import Icon from '@material-ui/core/Icon';
-import SaveIcon from '@material-ui/icons/Save';
 import DateFnsUtils from '@date-io/date-fns';
 import { MuiPickersUtilsProvider, KeyboardDatePicker } from '@material-ui/pickers';
 
@@ -85,10 +83,9 @@ export const Panel = props => {
                 size="large"
                 color="primary"
                 variant="contained"
-                startIcon={<SaveIcon />}
                 onClick={props.copyLetterCode}
               >
-                Сохранить
+                Скопировать
               </Button>
             </Grid>
           </Grid>

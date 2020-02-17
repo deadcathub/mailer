@@ -117,10 +117,10 @@ export class App extends Component {
   };
 
   copyLetterCode = () => {
-    // var target = document.getElementById('sig'),
     const target = document.querySelector(".js-letter"),
       rng = document.createRange(),
       sel = window.getSelection();
+
     rng.selectNode(target);
     sel.removeAllRanges();
     sel.addRange(rng);
