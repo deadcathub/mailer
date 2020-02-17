@@ -5,7 +5,7 @@ import Button from "@material-ui/core/Button";
 import Drawer from "@material-ui/core/Drawer";
 import { LetterWrap } from "./layout/letterwrap/LetterWrap";
 import { BlockTree } from "./layout/blocktree/BlockTree";
-import { Panel } from "./component/panel/Panel";
+import { Panel } from "./component/panel/Panel.js";
 import { DrawerCnt } from "./component/drawercnt/DrawerCnt";
 
 export class App extends Component {
@@ -136,7 +136,6 @@ export class App extends Component {
             handleInput={this.handleInput}
             сhangeLetterType={this.сhangeLetterType}
             handleDateChange={this.handleDateChange}
-            copyLetterCode={this.copyLetterCode}
           />
           <LetterWrap>
             <BlockTree

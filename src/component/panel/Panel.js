@@ -80,10 +80,11 @@ export const Panel = props => {
             </Grid>
             <Grid item xs={3}>
               <Button
+                className="js-btn"
                 size="large"
                 color="primary"
                 variant="contained"
-                onClick={props.copyLetterCode}
+                // onClick={props.copyLetterCode()}
               >
                 Скопировать
               </Button>
@@ -94,5 +95,3 @@ export const Panel = props => {
     </>
   );
 };
-
-
