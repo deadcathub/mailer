@@ -8,61 +8,26 @@ import { BlockBtn } from "./../../component/blockbtn/BlockBtn";
 export const BlockTree = props => {
   const appState = props.appState,
     setBlockType = props.setBlockType,
-    toggleDrawer = props.toggleDrawer;
+    toggleDrawer = props.toggleDrawer,
+    localState = {
+      appState,
+      setBlockType,
+      toggleDrawer
+    };
 
   return (
     <>
       {Object.keys(props.appState.blockTree).map((nodeType, index) => {
         if (nodeType === "header") {
-          return (
-            <BlockHeader
-              index={index}
-              key={index}
-              appState={appState}
-              setBlockType={setBlockType}
-              toggleDrawer={toggleDrawer}
-            />
-          );
+          return <BlockHeader {...localState} index={index} key={index} />;
         } else if (nodeType === "banner") {
-          return (
-            <BlockBanner
-              index={index}
-              key={index}
-              appState={appState}
-              setBlockType={setBlockType}
-              toggleDrawer={toggleDrawer}
-            />
-          );
+          return <BlockBanner {...localState} index={index} key={index} />;
         } else if (nodeType === "paragraph") {
-          return (
-            <BlockParagraph
-              index={index}
-              key={index}
-              appState={appState}
-              setBlockType={setBlockType}
-              toggleDrawer={toggleDrawer}
-            />
-          );
+          return <BlockParagraph {...localState} index={index} key={index} />;
         } else if (nodeType === "cta") {
-          return (
-            <BlockCta
-              index={index}
-              key={index}
-              appState={appState}
-              setBlockType={setBlockType}
-              toggleDrawer={toggleDrawer}
-            />
-          );
+          return <BlockCta {...localState} index={index} key={index} />;
         } else if (nodeType === "btn") {
-          return (
-            <BlockBtn
-              index={index}
-              key={index}
-              appState={appState}
-              setBlockType={setBlockType}
-              toggleDrawer={toggleDrawer}
-            />
-          );
+          return <BlockBtn {...localState} index={index} key={index} />;
         } else {
           return null;
         }
