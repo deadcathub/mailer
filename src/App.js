@@ -40,7 +40,7 @@ export class App extends Component {
   };
 
   сhangeLetterType = e => {
-    const localDataSet = this.state.dataSet;
+    const localDataSet = { ...this.state.dataSet };
     localDataSet.letterType = e.target.value;
     this.setState({
       dataSet: localDataSet
@@ -48,7 +48,7 @@ export class App extends Component {
   };
 
   handleInput = e => {
-    const localDataSet = this.state.dataSet,
+    const localDataSet = { ...this.state.dataSet },
       targetName = e.target.name;
     if (targetName === "landUrl") {
       localDataSet.landUrl = e.target.value;
@@ -61,7 +61,7 @@ export class App extends Component {
   };
 
   handleDateChange = date => {
-    const localDataSet = this.state.dataSet,
+    const localDataSet = { ...this.state.dataSet },
       formatDate =
         String(date.getDate()).padStart(2, "0") +
         String(date.getMonth() + 1).padStart(2, "0") +
@@ -85,7 +85,7 @@ export class App extends Component {
   };
 
   deleteBlock = () => {
-    const localState = this.state.blockTree;
+    const localState = { ...this.state.blockTree };
     delete localState[this.state.blockType];
     this.setState({
       blockTree: localState,
@@ -95,21 +95,22 @@ export class App extends Component {
   };
 
   submitDrawerData = e => {
-    const localState = this.state.blockTree[this.state.blockType];
-    if (localState.url) {
-      localState.url = e.target.urlField.value;
+    const localState = { ...this.state.blockTree },
+      localStateNode = localState[this.state.blockType];
+    if (localStateNode.url) {
+      localStateNode.url = e.target.urlField.value;
     }
-    if (localState.link) {
-      localState.link = e.target.linkField.value;
+    if (localStateNode.link) {
+      localStateNode.link = e.target.linkField.value;
     }
-    if (localState.text) {
-      localState.text = e.target.textField.value;
+    if (localStateNode.text) {
+      localStateNode.text = e.target.textField.value;
     }
-    if (localState.alt) {
-      localState.alt = e.target.altField.value;
+    if (localStateNode.alt) {
+      localStateNode.alt = e.target.altField.value;
     }
     this.setState({
-      // blockTree: localState, ???????????
+      blockTree: localState,
       blockType: null,
       bottom: false
     });
@@ -120,7 +121,6 @@ export class App extends Component {
     const target = document.querySelector(".js-letter"),
       rng = document.createRange(),
       sel = window.getSelection();
-
     rng.selectNode(target);
     sel.removeAllRanges();
     sel.addRange(rng);
