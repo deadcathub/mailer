@@ -22,9 +22,7 @@ export class App extends Component {
         text: "Вращайте Колесо Фортуны и выигрывайте ценные призы"
       },
       banner: {
-        url:
-          "https://user98023.clients-cdnnow.ru/images/newsletter/mail/2019/temporary/mail/fortune-wheel.jpg",
-        alt: "Lorem ipsum dolor sit amet, consectetur"
+        url: "https://user98023.clients-cdnnow.ru/images/newsletter/mail/2019/temporary/mail/fortune-wheel.jpg"
       },
       paragraph: {
         text: `Вы можете вращать Колесо Фортуны и выигрывать подарки каждые субботу и воскресенье. А сегодня мы добавляем до 12 мин. к консультациям, заказанным через Центр поддержки клиентов.\n\nЧтобы вы могли убедиться в том, что консультации гадалок по телефону действительно эффективны, мы предоставляем возможность заказать гадание по телефону бесплатно.`

@@ -32,14 +32,6 @@ export const DrawerCnt = props => {
           multiline
           variant="filled"
         />
-        <TextField
-          name="altField"
-          label="ALT баннера"
-          defaultValue={blockTree.banner.alt}
-          fullWidth
-          multiline
-          variant="filled"
-        />
       </>
     );
   } else if (blockType === "paragraph") {
