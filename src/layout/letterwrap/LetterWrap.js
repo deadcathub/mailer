@@ -1,5 +1,5 @@
 import React from "react";
-import { BlockFooter } from "./../../component/blockfooter/BlockFooter";
+import { BlockFooter } from "./../../component/BlockFooter/BlockFooter";
 
 export const LetterWrap = props => (
   <div className="js-letter letter-wrap">

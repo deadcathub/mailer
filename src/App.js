@@ -3,10 +3,10 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Drawer from "@material-ui/core/Drawer";
-import { LetterWrap } from "./layout/letterwrap/LetterWrap";
-import { BlockTree } from "./layout/blocktree/BlockTree";
-import { Panel } from "./component/panel/Panel.js";
-import { DrawerCnt } from "./component/drawercnt/DrawerCnt";
+import { LetterWrap } from "./layout/LetterWrap/LetterWrap";
+import { BlockTree } from "./layout/BlockTree/BlockTree";
+import { Panel } from "./component/Panel/Panel";
+import { DrawerCnt } from "./component/DrawerCnt/DrawerCnt";
 
 export class App extends Component {
   state = {

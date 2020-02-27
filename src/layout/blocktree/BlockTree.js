@@ -1,9 +1,9 @@
 import React from "react";
-import { BlockHeader } from "./../../component/blockheader/BlockHeader";
-import { BlockBanner } from "./../../component/blockbanner/BlockBanner";
-import { BlockParagraph } from "./../../component/blockparagraph/BlockParagraph";
-import { BlockCta } from "./../../component/blockcta/BlockCta";
-import { BlockBtn } from "./../../component/blockbtn/BlockBtn";
+import { BlockHeader } from "./../../component/BlockHeader/BlockHeader";
+import { BlockBanner } from "./../../component/BlockBanner/BlockBanner";
+import { BlockParagraph } from "./../../component/BlockParagraph/BlockParagraph";
+import { BlockCta } from "./../../component/BlockCta/BlockCta";
+import { BlockBtn } from "./../../component/BlockBtn/BlockBtn";
 
 export const BlockTree = props => {
   const appState = props.appState,
