@@ -16,12 +16,11 @@ export const BlockHeader = props => {
     msoHide: "all"
   };
   const styleLogo = {
-    width: "100%",
-    maxWidth: "130px",
+    maxWidth: 130,
     height: "auto",
-    display: "block",
     border: "0",
-    textDecoration: "none"
+    textDecoration: "none",
+    display: "block"
   };
   const styleHotline = {
     fontFamily: "Roboto, Arial, sans-serif",
@@ -75,8 +74,8 @@ export const BlockHeader = props => {
                         <img
                           src="https://user98023.clients-cdnnow.ru/images/newsletter/mail/2016/permanent/adaptive/action/action-logo-a7.png"
                           style={styleLogo}
-                          width="320"
-                          height="88"
+                          width="130"
+                          height=""
                           alt="Astro7.ru"
                         />
                       </a>
