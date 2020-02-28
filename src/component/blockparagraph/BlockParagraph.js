@@ -4,17 +4,16 @@ export const BlockParagraph = props => {
   const { letterTree } = props.appState;
 
   const styleParagraph = {
-    fontFamily: "Roboto, Arial, sans-serif",
-    fontSize: "17px",
-    fontWeight: "normal",
-    lineHeight: "1.5",
-    color: "#222222",
-    padding: "0",
-    marginTop: "15px",
-    marginBottom: "15px"
-  };
-
-  const paragraphTextBlocks = letterTree.paragraph.text.split(/\n/);
+      fontFamily: "Roboto, Arial, sans-serif",
+      fontSize: "17px",
+      fontWeight: "normal",
+      lineHeight: "1.5",
+      color: "#222222",
+      padding: "0",
+      marginTop: "15px",
+      marginBottom: "15px"
+    },
+    paragraphTextBlocks = letterTree.paragraph.text.split(/\n/);
 
   return (
     <div
