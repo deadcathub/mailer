@@ -1,7 +1,7 @@
 import React from "react";
 
 export const BlockParagraph = props => {
-  const { blockTree } = props.appState;
+  const { letterTree } = props.appState;
 
   const styleParagraph = {
     fontFamily: "Roboto, Arial, sans-serif",
@@ -14,7 +14,7 @@ export const BlockParagraph = props => {
     marginBottom: "15px"
   };
 
-  const paragraphTextBlocks = blockTree.paragraph.text.split(/\n/);
+  const paragraphTextBlocks = letterTree.paragraph.text.split(/\n/);
 
   return (
     <div

@@ -1,7 +1,7 @@
 import React from "react";
 
 export const BlockBanner = props => {
-  const { dataSet, blockTree } = props.appState;
+  const { dataSet, letterTree } = props.appState;
 
   const styleBanner = {
     maxWidth: "100%",
@@ -34,11 +34,11 @@ export const BlockBanner = props => {
       rel="noopener noreferrer"
     >
       <img
-        src={blockTree.banner.url}
+        src={letterTree.banner.url}
         style={styleBanner}
         width="680"
         height=""
-        alt={blockTree.banner.alt}
+        alt=""
       />
     </a>
   );

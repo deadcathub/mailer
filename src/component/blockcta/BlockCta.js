@@ -1,7 +1,7 @@
 import React from "react";
 
 export const BlockCta = props => {
-  const { blockTree } = props.appState;
+  const { letterTree } = props.appState;
 
   const styleCta = {
     maxWidth: "500px",
@@ -25,7 +25,7 @@ export const BlockCta = props => {
       style={{ marginTop: 30, marginBottom: 30 }}
     >
       <p align="center" valign="top" style={styleCta}>
-        {blockTree.cta.text}
+        {letterTree.cta.text}
       </p>
     </div>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 
 export const BlockBtn = props => {
-  const { dataSet, blockTree } = props.appState;
+  const { dataSet, letterTree } = props.appState;
 
   const styleButton = {
     fontFamily: "Roboto, Arial, sans-serif",
@@ -43,7 +43,7 @@ export const BlockBtn = props => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        {blockTree.btn.text}
+        {letterTree.btn.text}
       </a>
     </div>
   );

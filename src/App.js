@@ -4,97 +4,154 @@ import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Drawer from "@material-ui/core/Drawer";
 import { LetterWrap } from "./layout/LetterWrap/LetterWrap";
-import { BlockTree } from "./layout/BlockTree/BlockTree";
+import { LetterTree } from "./layout/LetterTree/LetterTree";
 import { Panel } from "./component/Panel/Panel";
 import { DrawerCnt } from "./component/DrawerCnt/DrawerCnt";
+import { StartPage } from "./layout/StartPage/StartPage";
+import "./App.scss";
 
 export class App extends Component {
   state = {
+    letterData: [
+      {
+        letterName: "Первый тип",
+        letterTree: {
+          header: {
+            text: "Скрытый текст первой рассылки"
+          },
+          banner: {
+            url:
+              "https://user98023.clients-cdnnow.ru/images/newsletter/mail/2019/temporary/mail/fortune-wheel.jpg"
+          },
+          paragraph: {
+            text: `{FIRSTNAME}, вы можете вращать Колесо Фортуны и выигрывать подарки каждые субботу и воскресенье. А сегодня мы добавляем до 12 мин. к консультациям.\n\nЧтобы вы могли убедиться в том, что консультации гадалок по телефону действительно эффективны, мы предоставляем возможность заказать гадание по телефону бесплатно.`
+          },
+          cta: {
+            text: "Вращайте Колесо Фортуны и выигрывайте ценные призы"
+          },
+          btn: {
+            text: "Вращать колесо"
+          }
+        }
+      },
+      {
+        letterName: "Второй тип",
+        letterTree: {
+          header: {
+            text: "Скрытый текст второй рассылки"
+          },
+          banner: {
+            url:
+              "https://user98023.clients-cdnnow.ru/images/newsletter/mail/2019/temporary/mail/replenish-dec.jpg"
+          },
+          paragraph: {
+            text: `{FIRSTNAME}, как любое начинание, год Крысы, открывающий новый цикл в восточном календаре, не обещает быть очень легким. Но мы желаем вам, чтобы несмотря ни на какие преграды, в вашей жизни всегда были те, кто протянет руку помощи в нужный момент.`
+          },
+          factoidOne: true,
+          cta: {
+            text: "Вращайте Колесо Фортуны и выигрывайте ценные призы"
+          },
+          btn: {
+            text: "Вращать колесо"
+          }
+        }
+      }
+    ],
+    letterType: null,
+    blockType: null,
+    letterTree: null,
     dataSet: {
       landUrl: undefined,
       letterType: "letter",
       letterSlogan: undefined,
       letterDate: null,
       letterDateFormat: null
-    },
-    blockTree: {
-      header: {
-        text: "Вращайте Колесо Фортуны и выигрывайте ценные призы"
-      },
-      banner: {
-        url: "https://user98023.clients-cdnnow.ru/images/newsletter/mail/2019/temporary/mail/fortune-wheel.jpg"
-      },
-      paragraph: {
-        text: `Вы можете вращать Колесо Фортуны и выигрывать подарки каждые субботу и воскресенье. А сегодня мы добавляем до 12 мин. к консультациям, заказанным через Центр поддержки клиентов.\n\nЧтобы вы могли убедиться в том, что консультации гадалок по телефону действительно эффективны, мы предоставляем возможность заказать гадание по телефону бесплатно.`
-      },
-      cta: {
-        text: "Вращайте Колесо Фортуны и выигрывайте ценные призы"
-      },
-      btn: {
-        text: "Вращать колесо"
+    }
+  };
+
+  setDataSet = e => {
+    this.setState({
+      letterTree: {
+        header: {
+          text: "Скрытый текст первой рассылки"
+        },
+        banner: {
+          url:
+            "https://user98023.clients-cdnnow.ru/images/newsletter/mail/2019/temporary/mail/fortune-wheel.jpg"
+        },
+        paragraph: {
+          text: `{FIRSTNAME}, вы можете вращать Колесо Фортуны и выигрывать подарки каждые субботу и воскресенье. А сегодня мы добавляем до 12 мин. к консультациям.\n\nЧтобы вы могли убедиться в том, что консультации гадалок по телефону действительно эффективны, мы предоставляем возможность заказать гадание по телефону бесплатно.`
+        },
+        cta: {
+          text: "Вращайте Колесо Фортуны и выигрывайте ценные призы"
+        },
+        btn: {
+          text: "Вращать колесо"
+        }
       }
-    },
-    blockType: null
+    });
   };
 
   сhangeLetterType = e => {
-    const localDataSet = { ...this.state.dataSet };
-    localDataSet.letterType = e.target.value;
+    const dataSet = { ...this.state.dataSet };
+    dataSet.letterType = e.target.value;
     this.setState({
-      dataSet: localDataSet
+      dataSet
     });
   };
 
   handleInput = e => {
-    const localDataSet = { ...this.state.dataSet },
+    const dataSet = { ...this.state.dataSet },
       targetName = e.target.name;
     if (targetName === "landUrl") {
-      localDataSet.landUrl = e.target.value;
+      dataSet.landUrl = e.target.value;
     } else if (targetName === "letterSlogan") {
-      localDataSet.letterSlogan = e.target.value;
+      dataSet.letterSlogan = e.target.value;
     }
     this.setState({
-      dataSet: localDataSet
+      dataSet
     });
   };
 
   handleDateChange = date => {
-    const localDataSet = { ...this.state.dataSet },
+    const dataSet = { ...this.state.dataSet },
       formatDate =
         String(date.getDate()).padStart(2, "0") +
         String(date.getMonth() + 1).padStart(2, "0") +
         String(date.getFullYear());
-    localDataSet.letterDate = date;
-    localDataSet.letterDateFormat = formatDate;
+    dataSet.letterDate = date;
+    dataSet.letterDateFormat = formatDate;
     this.setState({
-      dataSet: localDataSet
+      dataSet
     });
   };
 
   setBlockType = blockType => {
     this.setState({
-      blockType: blockType
+      blockType
     });
   };
 
   toggleDrawer = (side, open) => e => {
-    this.setState({ [side]: open });
+    this.setState({
+      [side]: open
+    });
     e.preventDefault();
   };
 
   deleteBlock = () => {
-    const localState = { ...this.state.blockTree };
-    delete localState[this.state.blockType];
+    const letterTree = { ...this.state.letterTree };
+    delete letterTree[this.state.blockType];
     this.setState({
-      blockTree: localState,
+      letterTree,
       blockType: null,
       bottom: false
     });
   };
 
   submitDrawerData = e => {
-    const localState = { ...this.state.blockTree },
-      localStateNode = localState[this.state.blockType];
+    const letterTree = { ...this.state.letterTree },
+      localStateNode = letterTree[this.state.blockType];
     if (localStateNode.url) {
       localStateNode.url = e.target.urlField.value;
     }
@@ -108,7 +165,7 @@ export class App extends Component {
       localStateNode.alt = e.target.altField.value;
     }
     this.setState({
-      blockTree: localState,
+      letterTree,
       blockType: null,
       bottom: false
     });
@@ -116,75 +173,89 @@ export class App extends Component {
   };
 
   componentDidMount() {
-    document.querySelector(".js-btn").addEventListener('click', function() {
-      const el = document.createElement('textarea');
-      el.value = document.querySelector(".js-letter").innerHTML;
-      document.body.appendChild(el);
-      el.select();
-      document.execCommand('copy');
-      document.body.removeChild(el);
-    });
+    const copyBtn = document.querySelector(".js-btn");
+    if (copyBtn) {
+      copyBtn.addEventListener("click", function() {
+        const el = document.createElement("textarea");
+        el.value = document.querySelector(".js-letter").innerHTML;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand("copy");
+        document.body.removeChild(el);
+      });
+    }
   }
 
   render() {
     return (
       <>
-        <Container maxWidth="md">
-          <Panel
-            appState={this.state}
-            handleInput={this.handleInput}
-            сhangeLetterType={this.сhangeLetterType}
-            handleDateChange={this.handleDateChange}
+        {!this.state.letterTree ? (
+          <StartPage
+            letterData={this.state.letterData}
+            setDataSet={this.setDataSet}
           />
-          <LetterWrap>
-            <BlockTree
-              appState={this.state}
-              toggleDrawer={this.toggleDrawer}
-              setBlockType={this.setBlockType}
-            />
-          </LetterWrap>
-        </Container>
-        <Drawer
-          className="b-modal"
-          anchor="bottom"
-          open={this.state.bottom}
-          onClose={this.toggleDrawer("bottom", false)}
-        >
-          <Container
-            maxWidth="md"
-            style={{ paddingTop: "50px", paddingBottom: "100px" }}
-          >
-            <form
-              onSubmit={this.submitDrawerData}
-              noValidate
-              autoComplete="off"
-            >
-              <DrawerCnt
-                blockTree={this.state.blockTree}
-                blockType={this.state.blockType}
+        ) : (
+          <>
+            <Container maxWidth="md">
+              <Panel
+                appState={this.state}
+                handleInput={this.handleInput}
+                сhangeLetterType={this.сhangeLetterType}
+                handleDateChange={this.handleDateChange}
               />
-              <Grid
-                container
-                className="b-modal_panel"
-                direction="row"
-                justify="space-between"
-                alignItems="center"
+            </Container>
+            <Container maxWidth="md">
+              <LetterWrap>
+                <LetterTree
+                  appState={this.state}
+                  toggleDrawer={this.toggleDrawer}
+                  setBlockType={this.setBlockType}
+                />
+              </LetterWrap>
+            </Container>
+            <Drawer
+              className="Modal"
+              anchor="bottom"
+              open={this.state.bottom}
+              onClose={this.toggleDrawer("bottom", false)}
+            >
+              <Container
+                maxWidth="md"
+                style={{ paddingTop: "50px", paddingBottom: "100px" }}
               >
-                <Button onClick={this.deleteBlock} size="large">
-                  Удалить
-                </Button>
-                <Button
-                  size="large"
-                  color="primary"
-                  variant="contained"
-                  type="submit"
+                <form
+                  onSubmit={this.submitDrawerData}
+                  noValidate
+                  autoComplete="off"
                 >
-                  Сохранить
-                </Button>
-              </Grid>
-            </form>
-          </Container>
-        </Drawer>
+                  <DrawerCnt
+                    letterTree={this.state.letterTree}
+                    blockType={this.state.blockType}
+                  />
+                  <Grid
+                    container
+                    className="ModalPanel"
+                    direction="row"
+                    justify="space-between"
+                    alignItems="center"
+                  >
+                    <Button onClick={this.deleteBlock} size="large">
+                      Удалить
+                    </Button>
+                    <Button
+                      size="large"
+                      color="primary"
+                      variant="contained"
+                      type="submit"
+                    >
+                      Сохранить
+                    </Button>
+                  </Grid>
+                </form>
+              </Container>
+            </Drawer>
+          </>
+        )}
       </>
     );
   }

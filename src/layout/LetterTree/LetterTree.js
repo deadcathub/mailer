@@ -1,11 +1,11 @@
 import React from "react";
-import { BlockHeader } from "./../../component/BlockHeader/BlockHeader";
-import { BlockBanner } from "./../../component/BlockBanner/BlockBanner";
-import { BlockParagraph } from "./../../component/BlockParagraph/BlockParagraph";
-import { BlockCta } from "./../../component/BlockCta/BlockCta";
-import { BlockBtn } from "./../../component/BlockBtn/BlockBtn";
+import { BlockHeader } from "../../component/BlockHeader/BlockHeader";
+import { BlockBanner } from "../../component/BlockBanner/BlockBanner";
+import { BlockParagraph } from "../../component/BlockParagraph/BlockParagraph";
+import { BlockCta } from "../../component/BlockCta/BlockCta";
+import { BlockBtn } from "../../component/BlockBtn/BlockBtn";
 
-export const BlockTree = props => {
+export const LetterTree = props => {
   const appState = props.appState,
     setBlockType = props.setBlockType,
     toggleDrawer = props.toggleDrawer,
@@ -17,7 +17,7 @@ export const BlockTree = props => {
 
   return (
     <>
-      {Object.keys(props.appState.blockTree).map((nodeType, index) => {
+      {Object.keys(props.appState.letterTree).map((nodeType, index) => {
         if (nodeType === "header") {
           return <BlockHeader {...localState} index={index} key={index} />;
         } else if (nodeType === "banner") {

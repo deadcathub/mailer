@@ -1,8 +1,9 @@
 import React from "react";
 import { BlockFooter } from "./../../component/BlockFooter/BlockFooter";
+import "./LetterWrap.scss";
 
 export const LetterWrap = props => (
-  <div className="js-letter letter-wrap">
+  <div className="js-letter LetterWrap">
     <div
       style={{
         maxWidth: "680px",

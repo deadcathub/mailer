@@ -2,7 +2,7 @@ import React from "react";
 // import { useEffect } from "react";
 
 export const BlockHeader = props => {
-  const { dataSet, blockTree } = props.appState;
+  const { dataSet, letterTree } = props.appState;
 
   const styleHiddenText = {
     maxHeight: "0",
@@ -48,9 +48,7 @@ export const BlockHeader = props => {
         props.toggleDrawer("bottom", true)(e);
       }}
     >
-      <div style={styleHiddenText}>
-        {blockTree.header.text}
-      </div>
+      <div style={styleHiddenText}>{letterTree.header.text}</div>
       <table cellSpacing="0" cellPadding="0" border="0" width="100%">
         <tbody>
           <tr>

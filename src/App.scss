@@ -1,44 +1,21 @@
 $color: #232323;
 $fontsize: 17px;
-
+html, body {
+  min-height: 100vh;
+}
 body {
   font-family: Roboto;
   font-size: $fontsize;
   color: $color;
+  margin: 0;
 }
 .js-block {
   cursor: pointer;
 }
-.letter-wrap {
-  box-shadow: 0 20px 8px -12px rgba(0, 0, 0, .07), 0 2px 20px 2px rgba(0, 0, 0, .09);
-  border-radius: 4px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-bottom: 100px;
+.Modal {
+  bottom: 0;
 }
-.b-modal {
-  
-}
-.b-modal_panel {
+.ModalPanel {
   margin-top: 16px;
 }
-.panel {
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-.panel_item {
-  list-style: none;
-  margin-bottom: 20px;
-}
-.MuiGrid-align-items-xs-center {
-  align-items: flex-start !important;
-}
-.panel_item .MuiGrid-item:last-child {
-  margin-left: auto;
-}
-.panel_item .MuiGrid-item:last-child .MuiButton-sizeLarge {
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
 
