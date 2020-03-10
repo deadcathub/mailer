@@ -4,6 +4,7 @@ import { BlockBanner } from "../../component/BlockBanner/BlockBanner";
 import { BlockParagraph } from "../../component/BlockParagraph/BlockParagraph";
 import { BlockCta } from "../../component/BlockCta/BlockCta";
 import { BlockBtn } from "../../component/BlockBtn/BlockBtn";
+import { FactoidOne } from "../../component/FactoidOne/FactoidOne";
 
 export const LetterTree = props => {
   const appState = props.appState,
@@ -17,13 +18,15 @@ export const LetterTree = props => {
 
   return (
     <>
-      {Object.keys(props.appState.letterTree).map((nodeType, index) => {
+      {Object.keys(appState.letterTree).map((nodeType, index) => {
         if (nodeType === "header") {
           return <BlockHeader {...localState} index={index} key={index} />;
         } else if (nodeType === "banner") {
           return <BlockBanner {...localState} index={index} key={index} />;
         } else if (nodeType === "paragraph") {
           return <BlockParagraph {...localState} index={index} key={index} />;
+        } else if (nodeType === "factoidOne") {
+          return <FactoidOne {...localState} index={index} key={index} />;
         } else if (nodeType === "cta") {
           return <BlockCta {...localState} index={index} key={index} />;
         } else if (nodeType === "btn") {
