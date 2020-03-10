@@ -3,10 +3,13 @@ import Button from "@material-ui/core/Button";
 import "./StartPage.scss";
 
 export const StartPage = props => {
+  let isGroup = false;
+
+  const fd = "";
+
   return (
     <div className="StartPage">
       {props.letterData.map((item, index) => {
-        // console.log(index);
         return (
           <Button
             size="large"
