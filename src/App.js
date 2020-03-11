@@ -160,7 +160,7 @@ export class App extends Component {
     });
   };
 
-  setBlockType = blockType => {
+    setBlockType = blockType => {
     this.setState({
       blockType
     });
