@@ -75,8 +75,9 @@ export const Panel = props => {
             size="large"
             color="primary"
             variant="contained"
+            onClick={props.handleIsSetComplete}
           >
-            Скопировать
+            Дальше
           </Button>
         </li>
       </ul>

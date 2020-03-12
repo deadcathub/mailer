@@ -1,7 +1,8 @@
 $color: #232323;
 $fontsize: 17px;
+
 html, body {
-  min-height: 100vh;
+  box-sizing: border-box;
 }
 body {
   font-family: Roboto;
@@ -17,5 +18,8 @@ body {
 }
 .ModalPanel {
   margin-top: 16px;
+}
+.MuiButton-sizeLarge {
+  height: 56px;
 }
 

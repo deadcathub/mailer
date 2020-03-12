@@ -23,13 +23,13 @@ export const FactoidOne = props => {
               verticalAlign: "top"
             }}
           >
-            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <table cellSpacing="0" cellPadding="0" border="0" width="100%">
               <tbody>
                 <tr>
                   <td style={{ padding: "5px 0" }}>
                     <table
-                      cellspacing="0"
-                      cellpadding="0"
+                      cellSpacing="0"
+                      cellPadding="0"
                       border="0"
                       width="100%"
                       style={{ fontSize: "14px", textAlign: "left" }}
@@ -89,13 +89,13 @@ export const FactoidOne = props => {
               verticalAlign: "top"
             }}
           >
-            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <table cellSpacing="0" cellPadding="0" border="0" width="100%">
               <tbody>
                 <tr>
                   <td style={{ padding: "5px 0" }}>
                     <table
-                      cellspacing="0"
-                      cellpadding="0"
+                      cellSpacing="0"
+                      cellPadding="0"
                       border="0"
                       width="100%"
                       style={{ fontSize: "14px", textAlign: "left" }}
@@ -155,13 +155,13 @@ export const FactoidOne = props => {
               verticalAlign: "top"
             }}
           >
-            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <table cellSpacing="0" cellPadding="0" border="0" width="100%">
               <tbody>
                 <tr>
                   <td style={{ padding: "5px 0" }}>
                     <table
-                      cellspacing="0"
-                      cellpadding="0"
+                      cellSpacing="0"
+                      cellPadding="0"
                       border="0"
                       width="100%"
                       style={{ fontSize: "14px", textAlign: "left" }}
@@ -234,13 +234,13 @@ export const FactoidOne = props => {
               verticalAlign: "top"
             }}
           >
-            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <table cellSpacing="0" cellPadding="0" border="0" width="100%">
               <tbody>
                 <tr>
                   <td style={{ padding: "5px 0" }}>
                     <table
-                      cellspacing="0"
-                      cellpadding="0"
+                      cellSpacing="0"
+                      cellPadding="0"
                       border="0"
                       width="100%"
                       style={{ fontSize: "14px", textAlign: "left" }}
@@ -300,13 +300,13 @@ export const FactoidOne = props => {
               verticalAlign: "top"
             }}
           >
-            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <table cellSpacing="0" cellPadding="0" border="0" width="100%">
               <tbody>
                 <tr>
                   <td style={{ padding: "5px 0" }}>
                     <table
-                      cellspacing="0"
-                      cellpadding="0"
+                      cellSpacing="0"
+                      cellPadding="0"
                       border="0"
                       width="100%"
                       style={{ fontSize: "14px", textAlign: "left" }}
@@ -366,13 +366,13 @@ export const FactoidOne = props => {
               verticalAlign: "top"
             }}
           >
-            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <table cellSpacing="0" cellPadding="0" border="0" width="100%">
               <tbody>
                 <tr>
                   <td style={{ padding: "5px 0" }}>
                     <table
-                      cellspacing="0"
-                      cellpadding="0"
+                      cellSpacing="0"
+                      cellPadding="0"
                       border="0"
                       width="100%"
                       style={{ fontSize: "14px", textAlign: "left" }}
@@ -445,13 +445,13 @@ export const FactoidOne = props => {
               verticalAlign: "top"
             }}
           >
-            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <table cellSpacing="0" cellPadding="0" border="0" width="100%">
               <tbody>
                 <tr>
                   <td style={{ padding: "5px 0" }}>
                     <table
-                      cellspacing="0"
-                      cellpadding="0"
+                      cellSpacing="0"
+                      cellPadding="0"
                       border="0"
                       width="100%"
                       style={{ fontSize: "14px", textAlign: "left" }}
@@ -511,13 +511,13 @@ export const FactoidOne = props => {
               verticalAlign: "top"
             }}
           >
-            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <table cellSpacing="0" cellPadding="0" border="0" width="100%">
               <tbody>
                 <tr>
                   <td style={{ padding: "5px 0" }}>
                     <table
-                      cellspacing="0"
-                      cellpadding="0"
+                      cellSpacing="0"
+                      cellPadding="0"
                       border="0"
                       width="100%"
                       style={{ fontSize: "14px", textAlign: "left" }}
@@ -577,13 +577,13 @@ export const FactoidOne = props => {
               verticalAlign: "top"
             }}
           >
-            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <table cellSpacing="0" cellPadding="0" border="0" width="100%">
               <tbody>
                 <tr>
                   <td style={{ padding: "5px 0" }}>
                     <table
-                      cellspacing="0"
-                      cellpadding="0"
+                      cellSpacing="0"
+                      cellPadding="0"
                       border="0"
                       width="100%"
                       style={{ fontSize: "14px", textAlign: "left" }}

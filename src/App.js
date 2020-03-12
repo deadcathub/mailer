@@ -24,8 +24,7 @@ export class App extends Component {
               "https://user98023.clients-cdnnow.ru/images/newsletter/mail/2019/temporary/mail/fortune-wheel.jpg"
           },
           paragraph: {
-            text: `{FIRSTNAME}, вы можете вращать Колесо Фортуны и выигрывать подарки каждые субботу и воскресенье. А сегодня мы добавляем до 12 мин. к консультациям.\n
-Чтобы вы могли убедиться в том, что консультации гадалок по телефону действительно эффективны, мы предоставляем возможность заказать гадание по телефону бесплатно.`
+            text: `{FIRSTNAME}, вы можете вращать Колесо Фортуны и выигрывать подарки каждые субботу и воскресенье. А сегодня мы добавляем до 12 мин. к консультациям.\nЧтобы вы могли убедиться в том, что консультации гадалок по телефону действительно эффективны, мы предоставляем возможность заказать гадание по телефону бесплатно.`
           },
           cta: {
             text: "Вращайте Колесо Фортуны и выигрывайте ценные призы"
@@ -47,13 +46,9 @@ export class App extends Component {
               "https://user98023.clients-cdnnow.ru/images/newsletter/mail/2019/temporary/mail/replenish-dec.jpg"
           },
           paragraph: {
-            text: `{FIRSTNAME}, как любое начинание, год Крысы, открывающий новый цикл в восточном календаре, не обещает быть очень легким. Но мы желаем вам, чтобы несмотря ни на какие преграды, в вашей жизни всегда были те, кто протянет руку помощи в нужный момент.\n
-Узнайте, что вас ждет в будущем году у наших экспертов. Тем более, что сегодня, 30 декабря, Astro7 дарит вам бонус +‍200 руб. при пополнении счета на каждую 1000 рублей. Больше сумма — больше бонус!`
+            text: `{FIRSTNAME}, как любое начинание, год Крысы, открывающий новый цикл в восточном календаре, не обещает быть очень легким. Но мы желаем вам, чтобы несмотря ни на какие преграды, в вашей жизни всегда были те, кто протянет руку помощи в нужный момент.\nУзнайте, что вас ждет в будущем году у наших экспертов. Тем более, что сегодня, 30 декабря, Astro7 дарит вам бонус +‍200 руб. при пополнении счета на каждую 1000 рублей. Больше сумма — больше бонус!`
           },
           factoidOne: "rub",
-          cta: {
-            text: "Вращайте Колесо Фортуны и выигрывайте ценные призы"
-          },
           btn: {
             text: "Пополнить счет"
           }
@@ -71,13 +66,9 @@ export class App extends Component {
               "https://user98023.clients-cdnnow.ru/images/newsletter/mail/2019/temporary/mail/replenish-dec-usd.jpg"
           },
           paragraph: {
-            text: `{FIRSTNAME}, как любое начинание, год Крысы, открывающий новый цикл в восточном календаре, не обещает быть очень легким. Но мы желаем вам, чтобы несмотря ни на какие преграды, в вашей жизни всегда были те, кто протянет руку помощи в нужный момент.\n
-Узнайте, что вас ждет в будущем году у наших экспертов. Тем более, что сегодня, 30 декабря, Astro7 дарит вам бонус +‍200 руб. при пополнении счета на каждую 1000 рублей. Больше сумма — больше бонус!`
+            text: `{FIRSTNAME}, как любое начинание, год Крысы, открывающий новый цикл в восточном календаре, не обещает быть очень легким. Но мы желаем вам, чтобы несмотря ни на какие преграды, в вашей жизни всегда были те, кто протянет руку помощи в нужный момент.\nУзнайте, что вас ждет в будущем году у наших экспертов. Тем более, что сегодня, 30 декабря, Astro7 дарит вам бонус +‍200 руб. при пополнении счета на каждую 1000 рублей. Больше сумма — больше бонус!`
           },
           factoidOne: "usd",
-          cta: {
-            text: "Вращайте Колесо Фортуны и выигрывайте ценные призы"
-          },
           btn: {
             text: "Пополнить счет"
           }
@@ -95,19 +86,16 @@ export class App extends Component {
               "https://user98023.clients-cdnnow.ru/images/newsletter/mail/2019/temporary/mail/replenish-dec-eur.jpg"
           },
           paragraph: {
-            text: `{FIRSTNAME}, как любое начинание, год Крысы, открывающий новый цикл в восточном календаре, не обещает быть очень легким. Но мы желаем вам, чтобы несмотря ни на какие преграды, в вашей жизни всегда были те, кто протянет руку помощи в нужный момент.\n
-Узнайте, что вас ждет в будущем году у наших экспертов. Тем более, что сегодня, 30 декабря, Astro7 дарит вам бонус +‍200 руб. при пополнении счета на каждую 1000 рублей. Больше сумма — больше бонус!`
+            text: `{FIRSTNAME}, как любое начинание, год Крысы, открывающий новый цикл в восточном календаре, не обещает быть очень легким. Но мы желаем вам, чтобы несмотря ни на какие преграды, в вашей жизни всегда были те, кто протянет руку помощи в нужный момент.\nУзнайте, что вас ждет в будущем году у наших экспертов. Тем более, что сегодня, 30 декабря, Astro7 дарит вам бонус +‍200 руб. при пополнении счета на каждую 1000 рублей. Больше сумма — больше бонус!`
           },
           factoidOne: "eur",
-          cta: {
-            text: "Вращайте Колесо Фортуны и выигрывайте ценные призы"
-          },
           btn: {
             text: "Пополнить счет"
           }
         }
       }
     ],
+    isSetComplete: false,
     letterType: null,
     blockType: null,
     letterTree: null,
@@ -131,6 +119,12 @@ export class App extends Component {
     dataSet.letterType = e.target.value;
     this.setState({
       dataSet
+    });
+  };
+
+  handleIsSetComplete = () => {
+    this.setState({
+      isSetComplete: true
     });
   };
 
@@ -160,7 +154,7 @@ export class App extends Component {
     });
   };
 
-    setBlockType = blockType => {
+  setBlockType = blockType => {
     this.setState({
       blockType
     });
@@ -206,38 +200,27 @@ export class App extends Component {
     e.preventDefault();
   };
 
-  componentDidMount() {
-    const copyBtn = document.querySelector(".js-btn");
-    if (copyBtn) {
-      copyBtn.addEventListener("click", function() {
-        const el = document.createElement("textarea");
-        el.value = document.querySelector(".js-letter").innerHTML;
-        document.body.appendChild(el);
-        el.select();
-        document.execCommand("copy");
-        document.body.removeChild(el);
-      });
-    }
-  }
-
   render() {
+    const letterTree = this.state.letterTree;
     return (
       <>
-        {!this.state.letterTree ? (
+        {!letterTree ? (
           <StartPage
             letterData={this.state.letterData}
             setDataSet={this.setDataSet}
           />
+        ) : !this.state.isSetComplete ? (
+          <Container maxWidth="md">
+            <Panel
+              appState={this.state}
+              handleInput={this.handleInput}
+              сhangeLetterType={this.сhangeLetterType}
+              handleDateChange={this.handleDateChange}
+              handleIsSetComplete={this.handleIsSetComplete}
+            />
+          </Container>
         ) : (
           <>
-            <Container maxWidth="md">
-              <Panel
-                appState={this.state}
-                handleInput={this.handleInput}
-                сhangeLetterType={this.сhangeLetterType}
-                handleDateChange={this.handleDateChange}
-              />
-            </Container>
             <Container maxWidth="md">
               <LetterWrap>
                 <LetterTree
