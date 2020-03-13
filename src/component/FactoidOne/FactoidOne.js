@@ -40,7 +40,7 @@ export const FactoidOne = props => {
                             <b
                               style={{
                                 fontFamily: "Roboto, Arial, sans-serif",
-                                fontSize: "16px",
+                                fontSize: "17px",
                                 lineHeight: "normal",
                                 color: "#222222",
                                 textDecoration: "line-through",
@@ -106,7 +106,7 @@ export const FactoidOne = props => {
                             <b
                               style={{
                                 fontFamily: "Roboto, Arial, sans-serif",
-                                fontSize: "16px",
+                                fontSize: "17px",
                                 lineHeight: "normal",
                                 color: "#222222",
                                 textDecoration: "line-through",
@@ -172,7 +172,7 @@ export const FactoidOne = props => {
                             <b
                               style={{
                                 fontFamily: "Roboto, Arial, sans-serif",
-                                fontSize: "16px",
+                                fontSize: "17px",
                                 lineHeight: "normal",
                                 color: "#222222",
                                 textDecoration: "line-through",
@@ -251,7 +251,7 @@ export const FactoidOne = props => {
                             <b
                               style={{
                                 fontFamily: "Roboto, Arial, sans-serif",
-                                fontSize: "16px",
+                                fontSize: "17px",
                                 lineHeight: "normal",
                                 color: "#222222",
                                 textDecoration: "line-through",
@@ -317,7 +317,7 @@ export const FactoidOne = props => {
                             <b
                               style={{
                                 fontFamily: "Roboto, Arial, sans-serif",
-                                fontSize: "16px",
+                                fontSize: "17px",
                                 lineHeight: "normal",
                                 color: "#222222",
                                 textDecoration: "line-through",
@@ -383,7 +383,7 @@ export const FactoidOne = props => {
                             <b
                               style={{
                                 fontFamily: "Roboto, Arial, sans-serif",
-                                fontSize: "16px",
+                                fontSize: "17px",
                                 lineHeight: "normal",
                                 color: "#222222",
                                 textDecoration: "line-through",
@@ -462,7 +462,7 @@ export const FactoidOne = props => {
                             <b
                               style={{
                                 fontFamily: "Roboto, Arial, sans-serif",
-                                fontSize: "16px",
+                                fontSize: "17px",
                                 lineHeight: "normal",
                                 color: "#222222",
                                 textDecoration: "line-through",
@@ -528,7 +528,7 @@ export const FactoidOne = props => {
                             <b
                               style={{
                                 fontFamily: "Roboto, Arial, sans-serif",
-                                fontSize: "16px",
+                                fontSize: "17px",
                                 lineHeight: "normal",
                                 color: "#222222",
                                 textDecoration: "line-through",
@@ -594,7 +594,7 @@ export const FactoidOne = props => {
                             <b
                               style={{
                                 fontFamily: "Roboto, Arial, sans-serif",
-                                fontSize: "16px",
+                                fontSize: "17px",
                                 lineHeight: "normal",
                                 color: "#222222",
                                 textDecoration: "line-through",

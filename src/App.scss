@@ -1,15 +1,28 @@
 $color: #232323;
 $fontsize: 17px;
 
-html, body {
+*, *:before, *:after {
   box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 body {
   font-family: Roboto;
   font-size: $fontsize;
   color: $color;
   margin: 0;
+  padding: 0;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
 }
+
 .js-block {
   cursor: pointer;
 }
@@ -22,4 +35,3 @@ body {
 .MuiButton-sizeLarge {
   height: 56px;
 }
-

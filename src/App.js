@@ -5,7 +5,7 @@ import Button from "@material-ui/core/Button";
 import Drawer from "@material-ui/core/Drawer";
 import { LetterWrap } from "./layout/LetterWrap/LetterWrap";
 import { LetterTree } from "./layout/LetterTree/LetterTree";
-import { Panel } from "./component/Panel/Panel";
+import { SetPanel } from "./component/SetPanel/SetPanel";
 import { DrawerCnt } from "./component/DrawerCnt/DrawerCnt";
 import { StartPage } from "./layout/StartPage/StartPage";
 import "./App.scss";
@@ -36,14 +36,14 @@ export class App extends Component {
       },
       {
         letterType: "group",
-        letterName: "1000+200 ₽",
+        letterName: "Пополнение ₽",
         letterTree: {
           header: {
-            text: "Скрытый текст второй рассылки"
+            text: "Скрытый текст"
           },
           banner: {
             url:
-              "https://user98023.clients-cdnnow.ru/images/newsletter/mail/2019/temporary/mail/replenish-dec.jpg"
+              "https://user98023.clients-cdnnow.ru/images/newsletter/mail/2019/temporary/mail/replenish-october.jpg"
           },
           paragraph: {
             text: `{FIRSTNAME}, как любое начинание, год Крысы, открывающий новый цикл в восточном календаре, не обещает быть очень легким. Но мы желаем вам, чтобы несмотря ни на какие преграды, в вашей жизни всегда были те, кто протянет руку помощи в нужный момент.\nУзнайте, что вас ждет в будущем году у наших экспертов. Тем более, что сегодня, 30 декабря, Astro7 дарит вам бонус +‍200 руб. при пополнении счета на каждую 1000 рублей. Больше сумма — больше бонус!`
@@ -56,14 +56,14 @@ export class App extends Component {
       },
       {
         letterType: "group",
-        letterName: "1000+200 $",
+        letterName: "Пополнение $",
         letterTree: {
           header: {
-            text: "Скрытый текст второй рассылки"
+            text: "Скрытый текст"
           },
           banner: {
             url:
-              "https://user98023.clients-cdnnow.ru/images/newsletter/mail/2019/temporary/mail/replenish-dec-usd.jpg"
+              "https://user98023.clients-cdnnow.ru/images/newsletter/mail/2019/temporary/mail/replenish-october-usd.jpg"
           },
           paragraph: {
             text: `{FIRSTNAME}, как любое начинание, год Крысы, открывающий новый цикл в восточном календаре, не обещает быть очень легким. Но мы желаем вам, чтобы несмотря ни на какие преграды, в вашей жизни всегда были те, кто протянет руку помощи в нужный момент.\nУзнайте, что вас ждет в будущем году у наших экспертов. Тем более, что сегодня, 30 декабря, Astro7 дарит вам бонус +‍200 руб. при пополнении счета на каждую 1000 рублей. Больше сумма — больше бонус!`
@@ -76,14 +76,14 @@ export class App extends Component {
       },
       {
         letterType: "group",
-        letterName: "1000+200 €",
+        letterName: "Пополнение €",
         letterTree: {
           header: {
-            text: "Скрытый текст второй рассылки"
+            text: "Скрытый текст"
           },
           banner: {
             url:
-              "https://user98023.clients-cdnnow.ru/images/newsletter/mail/2019/temporary/mail/replenish-dec-eur.jpg"
+              "https://user98023.clients-cdnnow.ru/images/newsletter/mail/2019/temporary/mail/replenish-october-eur.jpg"
           },
           paragraph: {
             text: `{FIRSTNAME}, как любое начинание, год Крысы, открывающий новый цикл в восточном календаре, не обещает быть очень легким. Но мы желаем вам, чтобы несмотря ни на какие преграды, в вашей жизни всегда были те, кто протянет руку помощи в нужный момент.\nУзнайте, что вас ждет в будущем году у наших экспертов. Тем более, что сегодня, 30 декабря, Astro7 дарит вам бонус +‍200 руб. при пополнении счета на каждую 1000 рублей. Больше сумма — больше бонус!`
@@ -91,6 +91,66 @@ export class App extends Component {
           factoidOne: "eur",
           btn: {
             text: "Пополнить счет"
+          }
+        }
+      },
+      {
+        letterType: "group",
+        letterName: "Скидка ₽",
+        letterTree: {
+          header: {
+            text: "Скрытый текст"
+          },
+          banner: {
+            url:
+              "https://astro7.ru/images/newsletter/mail/2019/temporary/mail/discount-may.jpg"
+          },
+          paragraph: {
+            text: `{FIRSTNAME}, когда Солнце переходит в нулевой градус знака Овна, начинается новый астрологический год. Овен характеризует бодрость, целеустремленность, порывистость. Еще один возможный блок, когда люди не видят никого или не видят лица. Вовсе получают образы животных. Это говорит о проблемах.`
+          },
+          factoidTwo: "rub",
+          btn: {
+            text: "Заказать консультацию"
+          }
+        }
+      },
+      {
+        letterType: "group",
+        letterName: "Скидка $",
+        letterTree: {
+          header: {
+            text: "Скрытый текст"
+          },
+          banner: {
+            url:
+              "https://astro7.ru/images/newsletter/mail/2019/temporary/mail/discount-may.jpg"
+          },
+          paragraph: {
+            text: `{FIRSTNAME}, когда Солнце переходит в нулевой градус знака Овна, начинается новый астрологический год. Овен характеризует бодрость, целеустремленность, порывистость. Еще один возможный блок, когда люди не видят никого или не видят лица. Вовсе получают образы животных. Это говорит о проблемах.`
+          },
+          factoidTwo: "usd",
+          btn: {
+            text: "Заказать консультацию"
+          }
+        }
+      },
+      {
+        letterType: "group",
+        letterName: "Скидка €",
+        letterTree: {
+          header: {
+            text: "Скрытый текст"
+          },
+          banner: {
+            url:
+              "https://astro7.ru/images/newsletter/mail/2019/temporary/mail/discount-may.jpg"
+          },
+          paragraph: {
+            text: `{FIRSTNAME}, когда Солнце переходит в нулевой градус знака Овна, начинается новый астрологический год. Овен характеризует бодрость, целеустремленность, порывистость. Еще один возможный блок, когда люди не видят никого или не видят лица. Вовсе получают образы животных. Это говорит о проблемах.`
+          },
+          factoidTwo: "eur",
+          btn: {
+            text: "Заказать консультацию"
           }
         }
       }
@@ -210,15 +270,13 @@ export class App extends Component {
             setDataSet={this.setDataSet}
           />
         ) : !this.state.isSetComplete ? (
-          <Container maxWidth="md">
-            <Panel
-              appState={this.state}
-              handleInput={this.handleInput}
-              сhangeLetterType={this.сhangeLetterType}
-              handleDateChange={this.handleDateChange}
-              handleIsSetComplete={this.handleIsSetComplete}
-            />
-          </Container>
+          <SetPanel
+            appState={this.state}
+            handleInput={this.handleInput}
+            сhangeLetterType={this.сhangeLetterType}
+            handleDateChange={this.handleDateChange}
+            handleIsSetComplete={this.handleIsSetComplete}
+          />
         ) : (
           <>
             <Container maxWidth="md">
