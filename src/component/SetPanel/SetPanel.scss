@@ -1,0 +1,14 @@
+.SetPanel {
+  width: 600px;
+  &List {
+    margin-top: 15px;
+    display: flex;
+    & .MuiFormControl-root {
+      margin-right: 10px;
+      flex: 0 0 220px;
+    }
+    & .MuiButtonBase-root {
+      flex: 1;
+    }
+  }
+}
